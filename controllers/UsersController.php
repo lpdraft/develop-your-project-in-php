@@ -2,10 +2,12 @@
 
 <?php
 require_once('../core/classes/User.php');
+// require_once('./helpers/session_helper.php');
+
+$errorMessage = array();
 
 class UsersController {
     private $userClass;
-    
     public function __construct(){
         $this -> userClass = new User;
     }
@@ -22,16 +24,27 @@ class UsersController {
             'password' => $_POST['password']
         ];
 
+         // Validate empty inputs
+    if(empty($data['name']) || empty($data['surname']) || empty($data['username']) || empty($data['email']) || empty($data['city']) || empty($data['phonenumber']) || empty($data['password'])){
+        // $errorMessage[] = "All the fields are mandatory";
+
+        // header('Location: ../views/template.php');
+        // exit();
+     
+    }
+
         echo '<pre>';
         print_r($data);
 
         if($this->userClass->register($data)){
+            Echo "Form has been submitted!";
             // header('Location: ../index.php');
         } else{
             die('Something went bad...!');
         }
     }
 
+   
 
 }
 

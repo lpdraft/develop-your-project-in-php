@@ -1,5 +1,6 @@
 <?php 
 require_once ('Database.php');
+
 class User {
     // Variable for db instanciate
     private $db;
@@ -28,6 +29,7 @@ class User {
     }
 
     
+  
 }
 
 

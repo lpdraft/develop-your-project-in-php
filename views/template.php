@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +52,7 @@
 					<div class="submit">
 						<button type="submit" name="submit" class="dark">Login</button>
 					</div>
+				
 				</form>
 
 
@@ -91,6 +93,8 @@
 					<div class="submit">
 						<button type="submit" name="submit" class="dark">Register</button>
 					</div>
+
+			
 				</form>
 			</div>
 		</div>	
