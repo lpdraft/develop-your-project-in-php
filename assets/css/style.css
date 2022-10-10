@@ -132,6 +132,19 @@ html {
 .veen > .wrapper.move input:focus {
   border-color: #e0b722;
 }
+
+.error {
+  color: #af4242;
+  background-color: #fde8ec;
+  padding: 1px;
+  display: none;
+  transform: translateY(-20px);
+  margin-bottom: 0.5px;
+}
+.success {
+  color: #489248;
+  background-color: #fde8ec;
+}
 @media (max-width: 767px) {
   .veen {
     padding: 5px;

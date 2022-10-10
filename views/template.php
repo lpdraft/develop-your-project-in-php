@@ -62,36 +62,44 @@
                     <input type="hidden" name="type" value="register">
 
 					<div class="name">
-						<input type="text" name="name">
+						<input type="text" name="name" value="<?php echo $name; ?>">
 						<label>Full Name</label>
+						<p class="error name-error"><?php echo $name_error; ?></p>
 					</div>
 					<div class="surname">
 						<input type="text" name="surname">
 						<label>Surname Name</label>
+						<p class="error surname-error"></p>
 					</div>
                     <div class="username">
                         <input type="text" name="username">
                         <label>User Name</label>
+						<p class="error username-error"></p>
                     </div>
 					<div class="mail">
 						<input type="email" name="email">
 						<label>Email</label>
+						<p class="error email-error"></p>
 					</div>
 					<div class="city">
 						<input type="text" name="city">
 						<label>City</label>
+						<p class="error city-error"></p>
 					</div>
 					<div class="phonenumber">
 						<input type="number" name="phonenumber">
 						<label>Phone Number</label>
+						<p class="error phonenumber-error"></p>
 					</div>
 					<div class="passwd">
 						<input type="password" name="password">
 						<label>Password</label>
+						<p class="error password-error"></p>
 					</div>
 
 					<div class="submit">
 						<button type="submit" name="submit" class="dark">Register</button>
+						<p class="success"></p>
 					</div>
 
 			

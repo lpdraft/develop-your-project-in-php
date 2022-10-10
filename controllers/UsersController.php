@@ -4,7 +4,6 @@
 require_once('../core/classes/User.php');
 // require_once('./helpers/session_helper.php');
 
-$errorMessage = array();
 
 class UsersController {
     private $userClass;
@@ -26,10 +25,8 @@ class UsersController {
 
          // Validate empty inputs
     if(empty($data['name']) || empty($data['surname']) || empty($data['username']) || empty($data['email']) || empty($data['city']) || empty($data['phonenumber']) || empty($data['password'])){
-        // $errorMessage[] = "All the fields are mandatory";
-
-        // header('Location: ../views/template.php');
-        // exit();
+       $data['name']; 
+        $emptyErrorFields = "All the fields are mandatories!";
      
     }
 
