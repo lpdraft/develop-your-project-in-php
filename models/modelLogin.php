@@ -27,8 +27,6 @@ class User {
             return false;
         }
     }
-
-    
   
 }
 
