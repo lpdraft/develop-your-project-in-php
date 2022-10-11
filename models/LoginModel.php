@@ -1,5 +1,5 @@
 <?php 
-require_once ('Database.php');
+require_once ('../core/classes/Database.php');
 
 class User {
     // Variable for db instanciate

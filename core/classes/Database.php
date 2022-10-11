@@ -34,6 +34,7 @@ class Database
             $pdo = new PDO($connection, USER, PASSWORD, $options);
 
             return $pdo;
+            echo "<h1>conected</h1>";
         } catch (PDOException $e) {
             require_once(VIEWS . "/error/error.php");
         }
