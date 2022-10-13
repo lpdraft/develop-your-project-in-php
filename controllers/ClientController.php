@@ -18,13 +18,13 @@ class ClientController
      function getClient($request)
      {
        $client = null;
-        if (isset($request["id"])) {
-             $client = $this->model->getById($request["id"]);
+        if (isset($request["id_admin"])) {
+             $client = $this->model->getById($request["id_admin"]);
          }
 
          $this->view->action = $request["action"];
          $this->view->data = $client;
-         $this->view->render("client/client");
+         $this->view->render("clients/client");
      }
 
      function createClient($request)
@@ -39,7 +39,7 @@ class ClientController
              }
          } else {
              $this->view->action = $request["action"];
-             $this->view->render("client/client");
+             $this->view->render("clients/client");
          }
      }
 
@@ -53,10 +53,10 @@ class ClientController
              } else {
                  $this->action = $request["action"];
                  $this->error = "The data entered is incorrect, check that there is no other client with that email.";
-                 $this->view->render("client/client");
+                 $this->view->render("clients/client");
              }
          } else {
-             $this->view->render("client/client");
+             $this->view->render("clients/client");
          }
      }
 
@@ -64,8 +64,8 @@ class ClientController
      {
          $action = $request["action"];
          $client = null;
-         if (isset($request["id"])) {
-             $client = $this->model->delete($request["id"]);
+         if (isset($request["id_admin"])) {
+             $client = $this->model->delete($request["id_admin"]);
              header("Location: index.php?controller=Client&action=getAllClients");
          }
      }

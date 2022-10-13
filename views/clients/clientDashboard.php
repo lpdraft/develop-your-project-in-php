@@ -38,15 +38,15 @@
                 echo "<td class='tg-0lax'>" . $client["city"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["phone_number"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=Employee&action=getEmployee&id=" . $client["id_admin"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=Employee&action=deleteEmployee&id=" . $client["id_admin"] . "'>Delete</a>
+                <a class='btn btn-secondary' href='?controller=Client&action=getClient&id_admin=" . $client["id_admin"] . "'>Edit</a>
+                <a class='btn btn-danger' href='?controller=Client&action=deleteClient&id_admin=" . $client["id_admin"] . "'>Delete</a>
                 </td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
     </table>
-    <a id="home" class="btn btn-primary" href="?controller=Employee&action=createEmployee">Create</a>
+    <a id="home" class="btn btn-primary" href="?controller=Client&action=createClient">Create</a>
     <a id="home" class="btn btn-secondary" href="./">Back</a>
 </body>
 

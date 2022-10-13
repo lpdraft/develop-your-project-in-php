@@ -19,9 +19,9 @@ class ClientModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id, name, surname, username, email, city, phone_number
-        FROM clients e
-        WHERE id = $id;");
+        $query = $this->db->connect()->prepare("SELECT id_admin, name, surname, username, email, city, phone_number
+        FROM admins 
+        WHERE id_admin = $id;");
 
         try {
             $query->execute();
@@ -34,7 +34,7 @@ class ClientModel extends Model
 
     function create($client)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO clients (name, surname, username, email, city, phone_number)
+        $query = $this->db->connect()->prepare("INSERT INTO admins (name, surname, username, email, city, phone_number)
         VALUES
         (?, ?, ?, ?, ?, ?);");
 
@@ -55,9 +55,9 @@ class ClientModel extends Model
 
     function update($client)
     {
-        $query = $this->db->connect()->prepare("UPDATE clients
+        $query = $this->db->connect()->prepare("UPDATE admins
         SET name = ?, surname = ?, username = ?, email = ?, city = ?, phone_number = ? 
-        WHERE id = ?;");
+        WHERE id_admin = ?;");
 
         $query->bindParam(1, $client["name"]);
         $query->bindParam(2, $client["surname"]);
@@ -65,7 +65,7 @@ class ClientModel extends Model
         $query->bindParam(4, $client["email"]);
         $query->bindParam(5, $client["city"]);
         $query->bindParam(6, $client["phone_number"]);
-        $query->bindParam(7, $client["id"]);
+        $query->bindParam(7, $client["id_admin"]);
 
         try {
             $query->execute();
@@ -77,7 +77,7 @@ class ClientModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM clients WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM admins WHERE id_admin = ?");
         $query->bindParam(1, $id);
 
         try {
