@@ -10,8 +10,6 @@ require_once "core/classes/Controller.php";
 require_once "core/Router.php";
 
 $router = new Router();
-?>
 
-<h1>Welcome to Index</h1>
 
 

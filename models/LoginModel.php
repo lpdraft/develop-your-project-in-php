@@ -1,7 +1,7 @@
 <?php 
 require_once ('../core/classes/Database.php');
 
-class User {
+class Login {
     // Variable for db instanciate
     private $db;
 
@@ -10,7 +10,7 @@ class User {
     }
     
     public function register($data){
-        $this -> db -> query('INSERT INTO admins (name, surname,username, email, city, phone_number, password) VALUES (:name, :surname, :username, :email, :city, :phonenumber, :password )');
+        $this -> db -> query('INSERT INTO admins (`name`, surname, username, email, city, phone_number, `password`) VALUES (:name, :surname, :username, :email, :city, :phonenumber, :password )');
 
         // Recieve and Resign data to the table
         $this->db->bind(':name', $data['name']);

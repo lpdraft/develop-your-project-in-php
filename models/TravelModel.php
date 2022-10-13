@@ -1,16 +1,16 @@
 <?php
 
-class HobbieModel extends Model
+class TravelModel extends Model
 {
     function get()
     {
-        $query = $this->db->connect()->prepare("SELECT id, name, type
-        FROM hobbies;");
+        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
+        FROM destination;");
 
         try {
             $query->execute();
-            $hobbies = $query->fetchAll();
-            return $hobbies;
+            $travels = $query->fetchAll();
+            return $travels;
         } catch (PDOException $e) {
             return [];
         }
@@ -18,28 +18,30 @@ class HobbieModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id, name, type
-        FROM hobbies
-        WHERE id = $id;");
+        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
+        FROM destination
+        WHERE id_dest = $id;");
 
         try {
             $query->execute();
-            $hobbie = $query->fetch();
-            return $hobbie;
+            $travel = $query->fetch();
+            return $travel;
         } catch (PDOException $e) {
             return [];
         }
     }
 
-    function create($hobbie)
+    function create($travel)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO hobbies (name, type)
+        $query = $this->db->connect()->prepare("INSERT INTO destination (origin, destination, entrance, departure, price)
         VALUES
-        (?, ?);");
+        (?, ?, ?, ?, ?);");
 
-        $query->bindParam(1, $hobbie["name"]);
-        $query->bindParam(2, $hobbie["type"]);
-
+        $query->bindParam(1, $travel["origin"]);
+        $query->bindParam(2, $travel["destination"]);
+        $query->bindParam(3, $travel["entrance"]);
+        $query->bindParam(4, $travel["departure"]);
+        $query->bindParam(5, $travel["price"]);
         try {
             $query->execute();
             return [true];
@@ -48,16 +50,19 @@ class HobbieModel extends Model
         }
     }
 
-    function update($hobbie)
+    function update($travel)
     {
-        echo "update model";
-        $query = $this->db->connect()->prepare("UPDATE hobbies
-        SET name = ?, type = ?
-        WHERE id = ?;");
+        // echo "update model";
+        $query = $this->db->connect()->prepare("UPDATE destination
+        SET origin = ?, destination = ?, entrance = ?, departure = ?, price = ?
+        WHERE id_dest = ?;");
 
-        $query->bindParam(1, $hobbie["name"]);
-        $query->bindParam(2, $hobbie["type"]);
-        $query->bindParam(3, $hobbie["id"]);
+        $query->bindParam(1, $travel["origin"]);
+        $query->bindParam(2, $travel["destination"]);
+        $query->bindParam(3, $travel["entrance"]);
+        $query->bindParam(4, $travel["departure"]);
+        $query->bindParam(5, $travel["price"]);
+        $query->bindParam(6, $travel["id_dest"]);
 
         try {
             $query->execute();
@@ -69,7 +74,7 @@ class HobbieModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM hobbies WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM destiantion WHERE id_dest = ?");
         $query->bindParam(1, $id);
 
         try {

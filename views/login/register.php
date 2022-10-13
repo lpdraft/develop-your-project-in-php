@@ -1,6 +1,6 @@
-<?php require_once('../assets/html/header.php');?>
+<?php require_once('/xampp/htdocs/develop-your-project-in-php/assets/html/header.php');?>
 
-<form method="POST" action="./controllers/LoginController.php" id="register">
+<form method="POST" action="../../controllers/LoginController.php" id="register">
 					<h3>Register</h3>
                     <input type="hidden" name="type" value="register">
 
@@ -47,4 +47,4 @@
     
 
 
-<?php require_once('../assets/html/footer.php');?>
+<?php require_once('/xampp/htdocs/develop-your-project-in-php/assets/html/footer.php');?>

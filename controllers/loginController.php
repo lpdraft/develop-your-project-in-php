@@ -1,14 +1,14 @@
 <h1>Hola Soy Controller</h1>
 
 <?php
-require_once('../core/classes/User.php');
+require_once('../models/LoginModel.php');
 // require_once('./helpers/session_helper.php');
 
 
-class UsersController {
+class LoginController {
     private $userClass;
     public function __construct(){
-        $this -> userClass = new User;
+        $this -> userClass = new Login;
     }
 
     // Store data send via POST  
@@ -27,6 +27,7 @@ class UsersController {
     if(empty($data['name']) || empty($data['surname']) || empty($data['username']) || empty($data['email']) || empty($data['city']) || empty($data['phonenumber']) || empty($data['password'])){
        $data['name']; 
         $emptyErrorFields = "All the fields are mandatories!";
+        return $emptyErrorFields;
      
     }
 
@@ -45,7 +46,7 @@ class UsersController {
 
 }
 
-$init = new UsersController;
+$init = new LoginController;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     switch($_POST['type']){
