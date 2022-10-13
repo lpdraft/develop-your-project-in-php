@@ -19,8 +19,8 @@
                 <th class="tg-0pky">ID</th>
                 <th class="tg-0pky">Origen</th>
                 <th class="tg-0pky">Destination</th>
-                <th class="tg-0lax">Arrival</th>
-                <th class="tg-0lax">Depurate</th>
+                <th class="tg-0lax">Entrance</th>
+                <th class="tg-0lax">Dep</th>
                 <th class="tg-0lax">Price</th>
                 <th class="tg-0lax">Action</th>
 
@@ -33,8 +33,8 @@
                 echo "<td class='tg-0lax'>" . $travel["id_dest"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["origin"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["destination"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["arrival"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["depurate"] . "</td>";
+                echo "<td class='tg-0lax'>" . $travel["entrance"] . "</td>";
+                echo "<td class='tg-0lax'>" . $travel["departure"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["price"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
                 <a class='btn btn-secondary' href='?controller=Travel&action=getTravel&id_dest=" . $travel["id_dest"] . "'>Edit</a>
@@ -50,3 +50,4 @@
 </body>
 
 </html>
+

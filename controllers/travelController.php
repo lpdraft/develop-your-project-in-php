@@ -18,8 +18,8 @@ class TravelController
     function getTravel($request)
     {
         $travel = null;
-        if (isset($request["id"])) {
-            $travel = $this->model->getById($request["id"]);
+        if (isset($request["id_dest"])) {
+            $travel = $this->model->getById($request["id_dest"]);
         }
 
         $this->view->action = $request["action"];
@@ -59,13 +59,14 @@ class TravelController
             $this->view->render("travel/travel");
         }
     }
+    
 
     function deleteTravel($request)
     {
         $action = $request["action"];
         $travel = null;
-        if (isset($request["id"])) {
-            $travel = $this->model->delete($request["id"]);
+        if (isset($request["id_dest"])) {
+            $travel = $this->model->delete($request["id_dest"]);
             header("Location: index.php?controller=Travel&action=getAllTravels");
         }
     }

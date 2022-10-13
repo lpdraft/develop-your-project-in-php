@@ -4,8 +4,8 @@ class TravelModel extends Model
 {
     function get()
     {
-        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, arrival, depurate, price
-        FROM travels;");
+        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
+        FROM destination;");
 
         try {
             $query->execute();
@@ -20,8 +20,8 @@ class TravelModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, arrival, depurate, price
-        FROM travels
+        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
+        FROM destination
         WHERE id_dest = $id;");
 
         try {
@@ -35,14 +35,14 @@ class TravelModel extends Model
 
     function create($travel)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO travels (origin, destination, arrival, depurate, price)
+        $query = $this->db->connect()->prepare("INSERT INTO destination (origin, destination, entrance, departure, price)
         VALUES
         (?, ?, ?, ?, ?);");
 
         $query->bindParam(1, $travel["origin"]);
         $query->bindParam(2, $travel["destination"]);
-        $query->bindParam(3, $travel["arrival"]);
-        $query->bindParam(4, $travel["depurate"]);
+        $query->bindParam(3, $travel["entrance"]);
+        $query->bindParam(4, $travel["departure"]);
         $query->bindParam(5, $travel["price"]);
 
         try {
@@ -56,14 +56,14 @@ class TravelModel extends Model
     function update($travel)
     {
         echo "update model";
-        $query = $this->db->connect()->prepare("UPDATE travels
-        SET origin = ?, destination = ?, arrival = ?, depurate = ?, price = ?
+        $query = $this->db->connect()->prepare("UPDATE destination
+        SET origin = ?, destination = ?, entrance = ?, departure = ?, price = ?
         WHERE id_dest = ?;");
 
         $query->bindParam(1, $travel["origin"]);
         $query->bindParam(2, $travel["destination"]);
-        $query->bindParam(3, $travel["arrival"]);
-        $query->bindParam(4, $travel["depurate"]);
+        $query->bindParam(3, $travel["entrance"]);
+        $query->bindParam(4, $travel["departure"]);
         $query->bindParam(5, $travel["price"]);
         $query->bindParam(6, $travel["id_dest"]);
 
@@ -77,7 +77,7 @@ class TravelModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM travels WHERE id_dest = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM destination WHERE id_dest = ?");
         $query->bindParam(1, $id);
 
         try {

@@ -21,7 +21,7 @@
         }
         ?>
         <form class="mb-5 needs-validation" action="?controller=Travel&action=<?php echo isset($this->data['id_dest']) ? "updateTravel" : "createTravel" ?>" method="post">
-            <input type="hidden" name="id" value="<?php echo isset($this->data['id_dest']) ? $this->data['id_dest'] : null ?>">
+            <input type="hidden" name="id_dest" value="<?php echo isset($this->data['id_dest']) ? $this->data['id_dest'] : null ?>">
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
@@ -35,13 +35,13 @@
                     </div>
                     <div class="col">
                     <div class="form-group">
-                        <label for="name">Arrival</label>
-                        <input required type="text" value="<?php echo isset($this->data['arrarrival']) ? $this->data['arrival'] : null ?>" class="form-control" id="arrival" name="arrival" aria-describedby="arrival" placeholder="Enter arrival">
+                        <label for="name">Entrance</label>
+                        <input required type="date" value="<?php echo isset($this->data['entrance']) ? $this->data['entrance'] : null ?>" class="form-control" id="entrance" name="entrance" aria-describedby="entrance" placeholder="Enter entrance">
                     </div>
                     <div class="col">
                     <div class="form-group">
-                        <label for="name">Depurate</label>
-                        <input required type="text" value="<?php echo isset($this->data['depurate']) ? $this->data['depurate'] : null ?>" class="form-control" id="depurate" name="depurate" aria-describedby="depurate" placeholder="Enter depurate">
+                        <label for="name">Departure</label>
+                        <input required type="date" value="<?php echo isset($this->data['departure']) ? $this->data['departure'] : null ?>" class="form-control" id="departure" name="departure" aria-describedby="departure" placeholder="Enter departure">
                     </div>
                     <div class="col">
                     <div class="form-group">
@@ -50,7 +50,7 @@
                     </div>
     
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Travel&action=getAllTravels&action=getAllTravels"; ?>">Return</a>
+                    <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Travel&action=getAllTravels"; ?>">Return</a>
         </form>
     </div>
 </body>
