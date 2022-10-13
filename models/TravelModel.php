@@ -1,16 +1,16 @@
 <?php
 
-class HobbieModel extends Model
+class TravelModel extends Model
 {
     function get()
     {
         $query = $this->db->connect()->prepare("SELECT id, name, type
-        FROM hobbies;");
+        FROM travels;");
 
         try {
             $query->execute();
-            $hobbies = $query->fetchAll();
-            return $hobbies;
+            $travels = $query->fetchAll();
+            return $travels;
         } catch (PDOException $e) {
             return [];
         }
@@ -19,26 +19,26 @@ class HobbieModel extends Model
     function getById($id)
     {
         $query = $this->db->connect()->prepare("SELECT id, name, type
-        FROM hobbies
+        FROM travels
         WHERE id = $id;");
 
         try {
             $query->execute();
-            $hobbie = $query->fetch();
-            return $hobbie;
+            $travel = $query->fetch();
+            return $travel;
         } catch (PDOException $e) {
             return [];
         }
     }
 
-    function create($hobbie)
+    function create($travel)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO hobbies (name, type)
+        $query = $this->db->connect()->prepare("INSERT INTO travels (name, type)
         VALUES
         (?, ?);");
 
-        $query->bindParam(1, $hobbie["name"]);
-        $query->bindParam(2, $hobbie["type"]);
+        $query->bindParam(1, $travel["name"]);
+        $query->bindParam(2, $travel["type"]);
 
         try {
             $query->execute();
@@ -48,16 +48,16 @@ class HobbieModel extends Model
         }
     }
 
-    function update($hobbie)
+    function update($travel)
     {
         echo "update model";
-        $query = $this->db->connect()->prepare("UPDATE hobbies
+        $query = $this->db->connect()->prepare("UPDATE travels
         SET name = ?, type = ?
         WHERE id = ?;");
 
-        $query->bindParam(1, $hobbie["name"]);
-        $query->bindParam(2, $hobbie["type"]);
-        $query->bindParam(3, $hobbie["id"]);
+        $query->bindParam(1, $travel["name"]);
+        $query->bindParam(2, $travel["type"]);
+        $query->bindParam(3, $travel["id"]);
 
         try {
             $query->execute();
@@ -69,7 +69,7 @@ class HobbieModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM hobbies WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM travels WHERE id = ?");
         $query->bindParam(1, $id);
 
         try {

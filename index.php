@@ -12,6 +12,6 @@ require_once "core/Router.php";
 $router = new Router();
 ?>
 
-<h1>Welcome to Index</h1>
+<!-- <h1>Welcome to Index</h1> -->
 
 

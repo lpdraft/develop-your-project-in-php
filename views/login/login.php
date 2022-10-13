@@ -1,4 +1,4 @@
-<?php require_once('/xampp/htdocs/develop-your-project-in-php/assets/html/header.php')?>
+
 
     <form method="POST" action="./controllers/UsersController.php" id="login" tabindex="500">
 		<h3>Login</h3>
