@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +13,13 @@
 </head>
 
 <body>
-    <h1>Welcome to MVC Pattern Basics!</h1>
+    <button><a href="../../Sessionhelper/logout.php">Log Out</a></button>
+    <h1>Welcome to Home Page: <?php echo $admin->getAdmin(); ?></h1>
+
     <div class="list-group">
         <a class="list-group-item list-group-item-action" href="?controller=Client&action=getAllClients">Clients Controller</a>
         <a class="list-group-item list-group-item-action" href="?controller=Travel&action=getAllTravels">Travel Controller</a>
 </body>
 
 </html>
+

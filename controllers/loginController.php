@@ -1,63 +1,37 @@
-<h1>Hola Soy Controller</h1>
-
 <?php
-require_once('../models/LoginModel.php');
-// require_once('./helpers/session_helper.php');
 
+include_once './Sessionhelper/dbSession.php';
 
-class LoginController {
-    private $userClass;
-    public function __construct(){
-        $this -> userClass = new Login;
-    }
+class Admin extends DB{
 
-    // Store data send via POST  
-    public function register(){
-        $data = [
-            'name' => $_POST['name'],
-            'surname' => $_POST['surname'],
-            'username' => $_POST['username'],
-            'email' => $_POST['email'],
-            'city' => $_POST['city'],
-            'phonenumber' => $_POST['phonenumber'],
-            'password' => $_POST['password']
-        ];
+    private $name;
+    private $username;
 
-         // Validate empty inputs
-    if(empty($data['name']) || empty($data['surname']) || empty($data['username']) || empty($data['email']) || empty($data['city']) || empty($data['phonenumber']) || empty($data['password'])){
-       $data['name']; 
-        $emptyErrorFields = "All the fields are mandatories!";
-        return $emptyErrorFields;
-     
-    }
+    public function adminExists($admin, $password){
+        $md5pass = md5($password);
 
-        echo '<pre>';
-        print_r($data);
+        $query = $this->connect()->prepare('SELECT * FROM admins WHERE username = :admin AND password = :pass');
+        $query->execute(['admin' => $admin, 'pass' => $md5pass]);
 
-        if($this->userClass->register($data)){
-            Echo "Form has been submitted!";
-            // header('Location: ../index.php');
-        } else{
-            die('Something went bad...!');
+        if($query->rowCount()){
+            return true;
+        }else{
+            return false;
         }
     }
 
-   
+    public function setAdmin($admin){
+        $query = $this->connect()->prepare('SELECT * FROM admins WHERE username = :admin');
+        $query->execute(['admin' => $admin]);
 
-}
+        foreach ($query as $currentUser) {
+            $this->name = $currentUser['name'];
+            $this->username = $currentUser['username'];
+        }
+    }
 
-$init = new LoginController;
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    switch($_POST['type']){
-        case 'register': 
-            $init -> register();
-            break;
-        case 'login': 
-            // $init -> login();
-            break;
-        default: 
-            header('Location: ./index.php');
+    public function getName(){
+        return $this->name;
     }
 }
 

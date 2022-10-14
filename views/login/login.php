@@ -1,25 +1,28 @@
-<?php require_once('/xampp/htdocs/develop-your-project-in-php/assets/html/header.php')?>
 
-    <form method="POST" action="./controllers/UsersController.php" id="login" tabindex="500">
-		<h3>Login</h3>
-        <input type="hidden" name="type" value="login">
+	<div>
+			<form method="POST" action="" id="login" tabindex="500">
+				<h3>Login</h3>
 
-		<div class="mail">
-			<label>Granted Email</label>
-			<input type="email" name="email">
-		</div>
+				<!-- Handeling Errors -->
+				<?php if(isset($errorLog)){
+					echo $errorLog;	
+				}
+				?>
 
-		<div class="passwd">
-			<label>Your Password</label>
-			<input type="password" name="passwoord">
-		</div>
+				<div class="mail">
+					<label>Admin username</label>
+					<input type="text" name="username">
+				</div>
 
-		<div class="submit">
-			<button type="submit" name="submit" class="dark">Login</button>
-		</div>            
-	</form>
+				<div class="passwd">
+					<label>Password</label>
+					<input type="password" name="password">
+				</div>
 
-    <a href="viewRegister.php">Want to register?</a>
+				<div class="submit">
+					<button type="submit" name="submit" class="dark">Login</button>
+				</div>            
+			</form>
 
-
-<?php require_once('/xampp/htdocs/develop-your-project-in-php/assets/html/footer.php');?>
+		<a href="../../../develop-your-project-in-php/views/login/register.php">Want to register?</a>
+	</div>
