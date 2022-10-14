@@ -1,72 +1,72 @@
 <?php
 
-class HobbieController
+class TravelController
 {
     use Controller;
 
     /* ~~~ CONTROLLER METHODS ~~~ */
 
-    function getAllHobbies()
+    function getAllTravels()
     {
-        $hobbies = $this->model->get();
-        if (isset($hobbies)) {
-            $this->view->data = $hobbies;
-            $this->view->render("hobbie/hobbieDashboard");
+        $travels = $this->model->get();
+        if (isset($travels)) {
+            $this->view->data = $travels;
+            $this->view->render("travel/travelDashboard");
         }
     }
 
-    function getHobbie($request)
+    function getTravel($request)
     {
-        $hobbie = null;
-        if (isset($request["id"])) {
-            $hobbie = $this->model->getById($request["id"]);
+        $travel = null;
+        if (isset($request["id_dest"])) {
+            $travel = $this->model->getById($request["id_dest"]);
         }
 
         $this->view->action = $request["action"];
-        $this->view->data = $hobbie;
-        $this->view->render("hobbie/hobbie");
+        $this->view->data = $travel;
+        $this->view->render("travel/travel");
     }
 
-    function createHobbie($request)
+    function createTravel($request)
     {
         if (sizeof($_POST) > 0) {
-            $hobbie = $this->model->create($_POST);
+            $travel = $this->model->create($_POST);
 
-            if ($hobbie[0]) {
-                header("Location: index.php?controller=Hobbie&action=getAllHobbies");
+            if ($travel[0]) {
+                header("Location: index.php?controller=Travel&action=getAllTravels");
             } else {
-                echo $hobbie[1];
+                echo $travel[1];
             }
         } else {
             $this->view->action = $request["action"];
-            $this->view->render("hobbie/hobbie");
+            $this->view->render("travel/travel");
         }
     }
 
-    function updateHobbie($request)
+    function updateTravel($request)
     {
         if (sizeof($_POST) > 0) {
-            $hobbie = $this->model->update($_POST);
+            $travel = $this->model->update($_POST);
 
-            if ($hobbie[0]) {
-                header("Location: index.php?controller=Hobbie&action=getAllHobbies");
+            if ($travel[0]) {
+                header("Location: index.php?controller=Travel&action=getAllTravels");
             } else {
                 $this->action = $request["action"];
-                $this->error = "The data entered is incorrect, check that there is no other hobbie with that name.";
-                $this->view->render("hobbie/hobbie");
+                $this->error = "The data entered is incorrect, check that there is no other travel with that name.";
+                $this->view->render("travel/travel");
             }
         } else {
-            $this->view->render("hobbie/hobbie");
+            $this->view->render("travel/travel");
         }
     }
 
-    function deleteHobbie($request)
+    function deleteTravel($request)
     {
         $action = $request["action"];
-        $hobbie = null;
-        if (isset($request["id"])) {
-            $hobbie = $this->model->delete($request["id"]);
-            header("Location: index.php?controller=Hobbie&action=getAllHobbies");
+        $travel = null;
+        if (isset($request["id_dest"])) {
+            $travel = $this->model->delete($request["id_dest"]);
+            header("Location: index.php?controller=Travel&action=getAllTravels");
         }
     }
 }

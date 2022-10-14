@@ -9,45 +9,65 @@
 </head>
 
 <body>
-    <h1>Client Dashboard page!</h1>
-    <style type="text/css">
+    <div class="container">
+        <h1>Client's page!</h1>
+        </br>
 
-    </style>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="tg-0pky">ID</th>
-                <th class="tg-0pky">Name</th>
-                <th class="tg-0lax">Surname</th>
-                <th class="tg-0lax">Username</th>
-                <th class="tg-0lax">Email</th>
-                <th class="tg-0lax">City</th>
-                <th class="tg-0lax">Phone Number</th>
-                <th class="tg-0lax">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($this->data as $index => $client) {
-                echo "<tr>";
-                echo "<td class='tg-0lax'>" . $client["id_admin"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["name"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["surname"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["username"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["email"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["city"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["phone_number"] . "</td>";
-                echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=Employee&action=getEmployee&id=" . $client["id_admin"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=Employee&action=deleteEmployee&id=" . $client["id_admin"] . "'>Delete</a>
-                </td>";
-                echo "</tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-    <a id="home" class="btn btn-primary" href="?controller=Employee&action=createEmployee">Create</a>
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
+        <?php
+        if ($this->action == "getClient" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
+            echo "<p>The client does not exists!</p>";
+        } else if (isset($error)) {
+            echo "<p>$error</p>";
+        }
+        ?>
+        <form class="mb-5 needs-validation" action="index.php?controller=Client&action=<?php echo isset($this->data['id_admin']) ? "updateClient" : "createClient" ?>" method="post">
+            <input type="hidden" name="id" value="<?php echo isset($this->data['id_admin']) ? $this->data['id_admin'] : null ?>">
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input required type="text" value="<?php echo isset($this->data['name']) ? $this->data['name'] : null ?>" class="form-control" id="name" name="name" aria-describedby="name" placeholder="Enter name">
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="name">Last Name</label>
+                        <input required type="text" value="<?php echo isset($this->data['surname']) ? $this->data['surname'] : null ?>" class="form-control" id="lastName" name="surname" aria-describedby="lastnameHelp" placeholder="Enter last name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+              
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input required type="email" value="<?php echo isset($this->data['email']) ? $this->data['email'] : null ?>" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" value="<?php echo isset($this->data['city']) ? $this->data['city'] : null ?>" class="form-control" id="city" name="city" aria-describedby="CityHelp" placeholder="Enter City">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="phoneNumber">PhoneNumber</label>
+                        <input type="text" value="<?php echo isset($this->data['phone_number']) ? $this->data['phone_number'] : null ?>" class="form-control" id="phoneNumber" name="phone_number" aria-describedby="phoneNumberHelp" placeholder="Enter phoneNumber">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Client&action=getAllClients"; ?>">Return</a>
+        </form>
+    </div>
 </body>
 
 </html>

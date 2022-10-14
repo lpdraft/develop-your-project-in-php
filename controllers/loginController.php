@@ -27,7 +27,7 @@ class UsersController {
     if(empty($data['name']) || empty($data['surname']) || empty($data['username']) || empty($data['email']) || empty($data['city']) || empty($data['phonenumber']) || empty($data['password'])){
        $data['name']; 
         $emptyErrorFields = "All the fields are mandatories!";
-     
+    
     }
 
         echo '<pre>';
@@ -41,7 +41,7 @@ class UsersController {
         }
     }
 
-   
+
 
 }
 
