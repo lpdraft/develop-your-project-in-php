@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <?php include_once ('../../assets/html/header.php'); ?>
-    <h3>@Session_Started</h3>
+    <h5>@Session_Started</h5>
     <h1 id="index-text">Welcome Back,     
         <?php if(isset($_SESSION['adminId'])){
             // split white space and get the name
@@ -11,6 +11,6 @@ session_start();
         }else{
             echo 'Guest';
         } 
-    ?> </h1>
+    ?></h1>
       
 <?php include_once ('../../assets/html/footer.php'); ?>
