@@ -1,34 +1,72 @@
-<?php 
-require_once ('../core/classes/Database.php');
+<?php
+// Need db class to make queries
+require_once '../Sessionhelper/dbSession.php';
 
-class User {
-    // Variable for db instanciate
+class Admin {
+
     private $db;
 
     public function __construct(){
-        $this -> db = new Database;
+        $this->db = new Database;
     }
+<<<<<<< HEAD
     
     public function register($data){
         $this -> db -> query('INSERT INTO admins (name, surname, username, email, city, phone_number, password) VALUES (:name, :surname, :username, :email, :city, :phonenumber, :password )');
+=======
+>>>>>>> b7a271ccf0ba2c23013237d64d3c53f7a550529f
 
-        // Recieve and Resign data to the table
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':surname', $data['surname']);
-        $this->db->bind(':username', $data['username']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':city', $data['city']);
-        $this->db->bind(':phonenumber', $data['phonenumber']);
-        $this->db->bind(':password', $data['password']);
+    //Find user by email or username
+    public function getEmailUsername($email, $username){
+        $this->db->query('SELECT * FROM admins WHERE adminUname = :adminUname OR adminEmail = :adminEmail');
+        $this->db->bind(':adminUname', $username);
+        $this->db->bind(':adminEmail', $email);
 
-        if($this -> db -> execute()){
-            return true;
-        } else {
+        // Store in obj (check db class method9
+        $row = $this->db->single();
+
+        //Check row if already exists
+        if($this->db->rowCount() > 0){
+            return $row;
+        }else{
             return false;
         }
     }
-  
+
+    //Register ADD as new User
+    public function register($data){
+        $this->db->query('INSERT INTO admins (adminName, adminUname, adminEmail, adminCity, adminPhone, adminPwd, pwdRepeat) 
+        VALUES (:adminName, :adminUname, :adminEmail, :adminCity, :adminPhone, :adminPwd, :pwdRepeat)');
+        //Bind those values
+        $this->db->bind(':adminName', $data['adminName']);
+        $this->db->bind(':adminUname', $data['adminUname']);
+        $this->db->bind(':adminEmail', $data['adminEmail']);
+        $this->db->bind(':adminCity', $data['adminCity']);
+        $this->db->bind(':adminPhone', $data['adminPhone']);
+        $this->db->bind(':adminPwd', $data['adminPwd']);
+        $this->db->bind(':pwdRepeat', $data['pwdRepeat']);
+
+        //Welther the Execute was successfull o not
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //Login user
+    public function login($name_Email, $password){
+        // Lokk for the match
+        $row = $this->getEmailUsername($name_Email, $name_Email);
+
+        if($row == false) return false;
+
+        $hashedPassword = $row -> adminPwd;
+        if(password_verify($password, $hashedPassword)){
+            return $row;
+        }else{
+            return false;
+        }
+    }
+    
 }
-
-
-?>
