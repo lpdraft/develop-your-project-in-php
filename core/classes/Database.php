@@ -1,36 +1,52 @@
 <?php
-#PDO Connection
-class Database{
-    private $dbConnection;
-    private $stmt;
+// Create connection
+class Database
+{
+    private $host;
+    private $db;
+    private $user;
+    private $password;
+    private $charset;
     private $error;
 
-    public function __construct(){
-        //Domain Name    
-        $domainName = 'mysql:host=localhost:3307;dbname=traveldb';
+    public function __construct()
+    {
+        $this->host = HOST;
+        $this->db = DB;
+        $this->user = USER;
+        $this->password = PASSWORD;
+        $this->charset = CHARSET;
+    }
+    function connect()
+    {
+        try {
+            $connection = "mysql:host=" . HOST . ";"
+                . "dbname=" . DB . ";"
+                . "user=" . USER . ";"
+                . "password=" . PASSWORD . ";"
+                . "charset=" . CHARSET;
 
-        // Possible no connection Error..
-        $options = array(
-            PDO::ATTR_PERSISTENT => true, 
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        );
-        // Try Catch block for possible erros that might araise
-        try{
-            $this->dbConnection = new PDO($domainName, 'root','', $options);
-            echo "Connected";
-        }catch(PDOException $e){
-            $this->error = $e->getMessage();
-            echo $this->error;
+            $options = [
+                PDO::ATTR_ERRMODE           =>  PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES  => FALSE,
+            ];
+
+            $pdo = new PDO($connection, USER, PASSWORD, $options);
+
+            return $pdo;
+            echo "<h1>conected</h1>";
+        } catch (PDOException $e) {
+            require_once(VIEWS . "/error/error.php");
         }
     }
 
-    // Method to prepare queries
+     //Method to prepare sql queries
     public function query($sql){
-        $this->stmt = $this->dbConnection->prepare($sql);
+        $this->stmt = $this->dbh->prepare($sql);
     }
 
-    // Bind values
-    // By default, inyeced data will be string
+    //Bind values, to prepared statement using named parameters
+    // Type (= null by default, so that you can introduce any data) of data user introduces, by default would be string
     public function bind($param, $value, $type = null){
         if(is_null($type)){
             switch(true){
@@ -50,26 +66,33 @@ class Database{
         // Add those values to stmt
         $this->stmt->bindValue($param, $value, $type);
     }
-
-    // Once, the preparation is finished, we need to execute stmt
+    
+    // Once the prepare stmt has finished being prepared, we will be able to run the query..
+    //Execute the prepared statement
     public function execute(){
         return $this->stmt->execute();
     }
-    // Array result set fetch (on multiple propose)
+
+     // But if we are quering for a set of data then it is likely that we want the results returned so that we can work with the query data in php..
+     # These 2 methos will be called insted of the execute method bc they call the execute method themselves and the both return data as php object
+
+     //Return multiple objects. An array objs that should be used for fecthing multiples rows
     public function resultSet(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    // Single Obj or table row that mtch the query + for new injetion
+    //Return a single object. First row found that matched the query
     public function single(){
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    // method to count rows so that we dont add same clients again and again
-     public function rowCount(){
+    //Get row count
+    // Will tell us how many rows match the query that we just executed with pdo
+    public function rowCount(){
         return $this->stmt->rowCount();
     }
 }
+
 ?>

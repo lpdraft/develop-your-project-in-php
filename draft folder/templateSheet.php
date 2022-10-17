@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +51,6 @@
 					<div class="submit">
 						<button type="submit" name="submit" class="dark">Login</button>
 					</div>
-				
 				</form>
 
 
