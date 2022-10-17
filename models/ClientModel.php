@@ -65,7 +65,7 @@ class ClientModel extends Model
         $query->bindParam(4, $client["email"]);
         $query->bindParam(5, $client["city"]);
         $query->bindParam(6, $client["phone_number"]);       
-        $query->bindParam(7, $client["id"]);
+        $query->bindParam(7, $client["id_admin"]);
 
         try {
             $query->execute();

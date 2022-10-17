@@ -21,7 +21,7 @@
         }
         ?>
         <form class="mb-5 needs-validation" action="index.php?controller=Client&action=<?php echo isset($this->data['id_admin']) ? "updateClient" : "createClient" ?>" method="post">
-            <input type="hidden" name="id" value="<?php echo isset($this->data['id_admin']) ? $this->data['id_admin'] : null ?>">
+            <input type="hidden" name="id_admin" value="<?php echo isset($this->data['id_admin']) ? $this->data['id_admin'] : null ?>">
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">

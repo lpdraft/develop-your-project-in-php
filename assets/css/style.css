@@ -1,199 +1,159 @@
-html {
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.body {
-  background: #ff4931;
-  transition: all 0.5s;
-  padding: 1px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.veen {
-  width: 70%;
-  margin: 100px auto;
-  background: rgba(255, 255, 255, 0.5);
-  min-height: 400px;
-  display: table;
+
+body {
+  height: 100vh;
   position: relative;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
 }
-.veen > div {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  color: #fff;
-}
-.veen button {
-  background: transparent;
-  display: inline-block;
-  padding: 10px 30px;
-  border: 3px solid #fff;
-  border-radius: 50px;
-  background-clip: padding-box;
-  position: relative;
-  color: #fff;
-  transition: all 0.25s;
-}
-.veen button.dark {
-  border-color: #ff4931;
-  background: #ff4931;
-}
-.veen .move button.dark {
-  border-color: #e0b722;
-  background: #e0b722;
-}
-.veen .splits p {
-  font-size: 18px;
-}
-.veen button:active {
-  box-shadow: none;
-}
-.veen button:focus {
-  outline: none;
-}
-.veen > .wrapper {
-  position: absolute;
-  width: 40%;
-  height: 120%;
-  top: -10%;
-  left: 5%;
-  background: #fff;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
-  transition: all 0.5s;
-  color: #303030;
+
+nav ul {
+  list-style: none;
   overflow: hidden;
+  background-color: #f2f2f2;
 }
-.veen .wrapper > form {
-  padding: 15px 30px 30px;
-  width: 100%;
-  transition: all 0.5s;
-  background: #fff;
-  width: 100%;
+
+nav ul li {
+  font-size: 1.5em;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  padding: 20px;
 }
-.veen .wrapper > form:focus {
+
+nav ul a:nth-child(1) {
+  float: left;
+}
+
+nav ul a:nth-child(n+2) {
+  float: right;
+}
+
+nav ul li:hover {
+  background-color: #cccccc;
+}
+
+@media (max-width: 600px) {
+  nav li {
+    margin: unset !important;
+    text-align: center;
+    padding: 10px 0;
+  }
+  nav a {
+    float: unset !important;
+  }
+  nav ul {
+    overflow: unset !important;
+  }
+}
+
+#index-text {
+  color: black;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 4rem;
+}
+
+form {
+  margin: 10px auto 0 auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+form input {
+  width: 100%;
   outline: none;
+  border: 1px solid black;
+  margin: 10px 0;
+  padding: 10px 10px 10px 5px;
 }
-.veen .wrapper #login {
-  padding-top: 20%;
-  visibility: visible;
+
+form button {
+  margin-top: 10px;
+  padding: 10px 20px;
 }
-.veen .wrapper #register {
-  transform: translateY(-80%) translateX(100%);
-  visibility: hidden;
+
+/*Remove Default Form Styling*/
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
 }
-.veen .wrapper.move #register {
-  transform: translateY(-80%) translateX(0%);
-  visibility: visible;
-}
-.veen .wrapper.move #login {
-  transform: translateX(-100%);
-  visibility: hidden;
-}
-.veen .wrapper > form > div {
-  position: relative;
-  margin-bottom: 15px;
-}
-.veen .wrapper label {
+
+#footer {
   position: absolute;
-  top: -7px;
-  font-size: 12px;
-  white-space: nowrap;
-  background: #fff;
-  text-align: left;
-  left: 15px;
-  padding: 0 5px;
-  color: #999;
-  pointer-events: none;
-}
-.veen .wrapper h3 {
-  margin-bottom: 25px;
-}
-.veen .wrapper input {
-  height: 40px;
-  padding: 5px 15px;
+  bottom: 0;
+  left: 0;
+  background-color: #f2f2f2;
   width: 100%;
-  border: solid 1px #999;
-}
-.veen .wrapper input {
-  height: 40px;
-  padding: 5px 15px;
-  width: 100%;
-  border: solid 1px #999;
-}
-.veen .wrapper input:focus {
-  outline: none;
-  border-color: #ff4931;
-}
-.veen > .wrapper.move {
-  left: 45%;
-}
-.veen > .wrapper.move input:focus {
-  border-color: #e0b722;
 }
 
-.error {
-  color: #af4242;
-  background-color: #fde8ec;
-  padding: 1px;
-  display: none;
-  transform: translateY(-20px);
-  margin-bottom: 0.5px;
+#footer p {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30px 0;
 }
-.success {
-  color: #489248;
-  background-color: #fde8ec;
-}
-@media (max-width: 767px) {
-  .veen {
-    padding: 5px;
-    margin: 0;
-    width: 100%;
-    display: block;
+
+@media (max-height: 800px) {
+  #footer {
+    position: static;
+    margin-top: 400px;
   }
-  .veen > .wrapper {
-    position: relative;
-    height: auto;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  .veen > div {
-    display: inline-block;
-  }
-  .splits {
-    width: 50%;
-    background: #fff;
-    float: left;
-  }
-  .splits button {
-    width: 100%;
-    border-radius: 0;
-    background: #505050;
-    border: 0;
-    opacity: 0.7;
-  }
-  .splits button.active {
-    opacity: 1;
-  }
-  .splits button.active {
-    opacity: 1;
-    background: #ff4931;
-  }
-  .splits.rgstr-btn button.active {
-    background: #e0b722;
-  }
-  .splits p {
-    display: none;
-  }
-  .veen > .wrapper.move {
-    left: 0%;
+  #footer p {
+    padding: 30px 0 200px 0;
   }
 }
 
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  box-shadow: inset 0 0 0 50px #fff;
+.header {
+  text-align: center;
+  margin-top: 20px;
 }
+
+.form-message {
+  margin: 20px auto 0 auto;
+  border-radius: 10px;
+  text-transform: capitalize;
+  max-width: 560px;
+  width: 90%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-message p {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.form-message-red {
+  background-color: #ffb3b3;
+  border: 2px solid #ff0000;
+}
+
+.form-message-green {
+  background-color: lightgreen;
+  border: 2px solid green;
+}
+
+.form-sub-msg {
+  margin: 20px auto 0 auto;
+  width: 90%;
+  max-width: 560px;
+  color: #00334d;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+/*# sourceMappingURL=style.css.map */

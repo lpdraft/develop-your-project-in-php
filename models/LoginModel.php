@@ -1,34 +1,73 @@
-<?php 
-require_once ('../core/classes/Database.php');
+<?php
 
-class Login {
-    // Variable for db instanciate
+
+class User extends Model {
+
     private $db;
 
     public function __construct(){
-        $this -> db = new Database;
+        $this->db = new Database;
     }
-    
-    public function register($data){
-        $this -> db -> query('INSERT INTO admins (`name`, surname, username, email, city, phone_number, `password`) VALUES (:name, :surname, :username, :email, :city, :phonenumber, :password )');
 
-        // Recieve and Resign data to the table
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':surname', $data['surname']);
-        $this->db->bind(':username', $data['username']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':city', $data['city']);
-        $this->db->bind(':phonenumber', $data['phonenumber']);
-        $this->db->bind(':password', $data['password']);
+    //Find user by email or username
+    public function findUserByEmailOrUsername($email, $username){
+        $this->db->query('SELECT * FROM users WHERE usersUid = :username OR usersEmail = :email');
+        $this->db->bind(':username', $username);
+        $this->db->bind(':email', $email);
 
-        if($this -> db -> execute()){
-            return true;
-        } else {
+        $row = $this->db->single();
+
+        //Check row
+        if($this->db->rowCount() > 0){
+            return $row;
+        }else{
             return false;
         }
     }
-  
+
+    //Register User
+    public function register($data){
+        $this->db->query('INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) 
+        VALUES (:name, :email, :Uid, :password)');
+        //Bind values
+        $this->db->bind(':name', $data['usersName']);
+        $this->db->bind(':email', $data['usersEmail']);
+        $this->db->bind(':Uid', $data['usersUid']);
+        $this->db->bind(':password', $data['usersPwd']);
+
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //Login user
+    public function login($nameOrEmail, $password){
+        $row = $this->findUserByEmailOrUsername($nameOrEmail, $nameOrEmail);
+
+        if($row == false) return false;
+
+        $hashedPassword = $row->usersPwd;
+        if(password_verify($password, $hashedPassword)){
+            return $row;
+        }else{
+            return false;
+        }
+    }
+
+    //Reset Password
+    public function resetPassword($newPwdHash, $tokenEmail){
+        $this->db->query('UPDATE users SET usersPwd=:pwd WHERE usersEmail=:email');
+        $this->db->bind(':pwd', $newPwdHash);
+        $this->db->bind(':email', $tokenEmail);
+
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
-
-
-?>
