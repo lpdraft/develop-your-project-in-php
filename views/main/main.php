@@ -6,10 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="assets/js/app.js" defer></script>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </head>
+
+    <nav class="py-2 bg-light border-bottom">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                    <li class="nav-item"><a href="../main/main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item"><a href="../../index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>
+                    <li class="nav-item"><a href="../../index.php?controller=Travel&action=getAllTravels" class="nav-link link-dark px-2">Travels Dashboard</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">About</a></li>
+                </ul>
+                <ul class="nav">
+                    <li class="nav-item"><a href="./views/login/login.php" class="nav-link link-dark px-2">Login</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
+                </ul> 
+            </div>
+    </nav>
 
 <body>
     <!-- START THE FEATURETTES -->

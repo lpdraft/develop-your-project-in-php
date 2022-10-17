@@ -5,7 +5,7 @@ class TravelModel extends Model
     function get()
     {
         $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
-        FROM travel;");
+        FROM travels;");
 
         try {
             $query->execute();
@@ -19,7 +19,7 @@ class TravelModel extends Model
     function getById($id)
     {
         $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
-        FROM travel
+        FROM travels
         WHERE id_dest = $id;");
 
         try {
@@ -33,7 +33,7 @@ class TravelModel extends Model
 
     function create($travel)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO travel (origin, destination, entrance, departure, price)
+        $query = $this->db->connect()->prepare("INSERT INTO travels (origin, destination, entrance, departure, price)
         VALUES
         (?, ?, ?, ?, ?);");
 
@@ -53,7 +53,7 @@ class TravelModel extends Model
     function update($travel)
     {
         // echo "update model";
-        $query = $this->db->connect()->prepare("UPDATE travel
+        $query = $this->db->connect()->prepare("UPDATE travels
         SET origin = ?, destination = ?, entrance = ?, departure = ?, price = ?
         WHERE id_dest = ?;");
 
@@ -74,7 +74,7 @@ class TravelModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM travel WHERE id_dest = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM travels WHERE id_dest = ?");
         $query->bindParam(1, $id);
 
         try {

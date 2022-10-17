@@ -64,8 +64,8 @@ class ClientController
     {
         $action = $request["action"];
         $client = null;
-        if (isset($request["id_admin"])) {
-            $client = $this->model->delete($request["id_admin"]);
+        if (isset($request["id_client"])) {
+            $client = $this->model->delete($request["id_client"]);
             header("Location: index.php?controller=Client&action=getAllClients");
         }
     }

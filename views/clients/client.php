@@ -20,8 +20,8 @@
             echo "<p>$error</p>";
         }
         ?>
-        <form class="mb-5 needs-validation" action="index.php?controller=Client&action=<?php echo isset($this->data['id_admin']) ? "updateClient" : "createClient" ?>" method="post">
-            <input type="hidden" name="id_admin" value="<?php echo isset($this->data['id_admin']) ? $this->data['id_admin'] : null ?>">
+        <form class="mb-5 needs-validation" action="index.php?controller=Client&action=<?php echo isset($this->data['id_client']) ? "updateClient" : "createClient" ?>" method="post">
+            <input type="hidden" name="id_client" value="<?php echo isset($this->data['id_client']) ? $this->data['id_client'] : null ?>">
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
