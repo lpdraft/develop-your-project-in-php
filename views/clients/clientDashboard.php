@@ -39,15 +39,15 @@
             <?php
             foreach ($this->data as $index => $client) {
                 echo "<tr>";
-                echo "<td class='tg-0lax'>" . $client["id_admin"] . "</td>";
+                echo "<td class='tg-0lax'>" . $client["id_client"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["name"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["surname"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["email"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["city"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["phone_number"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=Client&action=getClient&id_admin=" . $client["id_admin"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=Client&action=deleteClient&id_admin=" . $client["id_admin"] . "'>Delete</a>
+                <a class='btn btn-secondary' href='?controller=Client&action=getClient&id_client=" . $client["id_client"] . "'>Edit</a>
+                <a class='btn btn-danger' href='?controller=Client&action=deleteClient&id_client=" . $client["id_client"] . "'>Delete</a>
                 </td>";
                 echo "</tr>";
             }

@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `admins`
 --
 
-CREATE TABLE `admins` (
-  `id_admin` int(11) NOT NULL,
+CREATE TABLE `clients` (
+  `id_client` int(11) NOT NULL,
   `name` varchar(200) COLLATE utf8mb4_spanish_ci NOT NULL,
   `surname` varchar(200) COLLATE utf8mb4_spanish_ci NOT NULL,
   `email` varchar(200) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `admins` (
 -- Volcado de datos para la tabla `admins`
 --
 
-INSERT INTO `admins` (`id_admin`, `name`, `surname`, `email`, `city`, `phone_number`) VALUES
+INSERT INTO `clients` (`id_client`, `name`, `surname`, `email`, `city`, `phone_number`) VALUES
 (2, 'Lokesh', 'Pereiro', 'aaa@correo.com', 'Sevilla', 6675353),
 (9, 'Jack', 'paus', 'ff@ff.vom', 'ibiza', 55432);
 
@@ -51,8 +51,8 @@ INSERT INTO `admins` (`id_admin`, `name`, `surname`, `email`, `city`, `phone_num
 --
 -- Indices de la tabla `admins`
 --
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id_admin`);
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id_client`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -61,8 +61,8 @@ ALTER TABLE `admins`
 --
 -- AUTO_INCREMENT de la tabla `admins`
 --
-ALTER TABLE `admins`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `clients`
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
