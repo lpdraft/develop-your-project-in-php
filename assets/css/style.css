@@ -218,6 +218,7 @@ border-color: var(--bs-table-border-color);
 
 p{
   color: #320b6c;
+  margin-top: 50px ;
 }
 
 .principal{
@@ -243,4 +244,7 @@ p{
 
 .prueba{
   margin: 20px;
+}
+.lead{
+  margin-top: 150px;
 }

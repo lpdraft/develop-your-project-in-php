@@ -17,9 +17,9 @@
     <div class="row principal-row">
     <div class="principal  p-md-5 mb-4 rounded text-bg-dark">
     <div class="col-md-6 px-0">
-      <h1 class="display-2 ">¿Te gusta viajar?</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-black fw-bold">Continue reading...</a></p>
+      <h1 class="display-2 ">These top destinations are just a click away</h1>
+      <p class="lead my-3">Deals from your favorite booking sites.</p>
+      <p class="lead mb-8"><a href="http://localhost/develop-your-project-in-php/index.php?controller=Travel&action=getAllTravels" class="text-black">Continue reading...</a></p>
     </div>
   </div>
 
@@ -28,8 +28,8 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h1 class="featurette-heading fw-normal lh-1">¿Buscas relajarte y no sabes como? <span class="text-muted">See for yourself.</span></h1>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        <h1 class="featurette-heading fw-normal lh-8">Try searching for a city, a specific hotel, or even a landmark! <span class="text-muted">See for yourself.</span></h1>
+        <p class="lead">With us you can easily find your ideal hotel and compare prices from different websites. Simply enter where you want to go and your desired travel dates, and let our hotel search engine compare accommodation prices for you. To refine your search results, simply filter by price, distance (e.g. from the beach), star category, facilities and more. From budget hostels to luxury suites, we make it easy to book online. You can search from a large variety of rooms and locations across the USA, like San Francisco and Chicago to popular cities and holiday destinations abroad!.</p>
       </div>
       <div class="col-md-5 order-md-1 chorro">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img"   focusable="false"></svg>
@@ -41,8 +41,8 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">¿O eres de los que buscan aventuras? <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Si tu respuesta es sí, consulta con nosotros nuestra oferta de viajes y experiencias en lugares increibles</p>
+        <h2 class="featurette-heading fw-normal lh-8"> Search hundreds of flight sites at once. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">The prices shown come from numerous hotels and booking websites. This means that while users decide on us which hotel best suits their needs, the booking process itself is completed through the booking sites (which are linked to our website). By clicking on the “view deal” button, you will be forwarded onto a booking site where you can complete the reservation for the hotel deal found on our agency.</p>
       </div>
       <div class="col-md-5 order-md-1 chorro2">
       <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img"   focusable="false"></svg>
