@@ -56,16 +56,17 @@ class ClientModel extends Model
     function update($client)
     {
         $query = $this->db->connect()->prepare("UPDATE admins
-        SET id_admin = ?, `name` = ?, surname = ?, email = ?, city = ?, phone_number = ? 
+        SET `name` = ?, surname = ?, email = ?, city = ?, phone_number = ? 
         WHERE id_admin = ?;");
 
-        $query->bindParam(1, $client["id_admin"]);
-        $query->bindParam(2, $client["name"]);
-        $query->bindParam(3, $client["surname"]);
-        $query->bindParam(4, $client["email"]);
-        $query->bindParam(5, $client["city"]);     
-        $query->bindParam(6, $client["phone_number"]);
-
+    
+        $query->bindParam(1, $client["name"]);
+        $query->bindParam(2, $client["surname"]);
+        $query->bindParam(3, $client["email"]);
+        $query->bindParam(4, $client["city"]);     
+        $query->bindParam(5, $client["phone_number"]);
+        $query->bindParam(6, $client["id_admin"]);
+        
         try {
             $query->execute();
             return [true];

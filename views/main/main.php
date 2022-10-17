@@ -28,7 +28,7 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h1 class="featurette-heading fw-normal lh-1">¿Buscas relajarte y no sabemos como? <span class="text-muted">See for yourself.</span></h1>
+        <h1 class="featurette-heading fw-normal lh-1">¿Buscas relajarte y no sabes como? <span class="text-muted">See for yourself.</span></h1>
         <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
       <div class="col-md-5 order-md-1 chorro">
