@@ -2,7 +2,7 @@
 // Need db class to make queries
 require_once '../Sessionhelper/dbSession.php';
 
-class Admin {
+class Admin{
 
     private $db;
 

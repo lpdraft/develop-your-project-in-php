@@ -8,13 +8,13 @@
 */
 
 class Database {
-    //Will be the PDO object variables
+    // Will be the PDO object variables
     private $dbh;
     private $stmt;
     private $error;
 
     public function __construct(){
-        //Set DSN-> Data Source Name
+        // Set DSN-> Data Source Name
         $dsn = 'mysql:host=localhost:3307;dbname=traveldb';
 
         // Possible no connection Error..
@@ -37,13 +37,13 @@ class Database {
         }
     }
 
-    //Method to prepare sql queries
+    // //Method to prepare sql queries
     public function query($sql){
         $this->stmt = $this->dbh->prepare($sql);
     }
 
-    //Bind values, to prepared statement using named parameters
-    // Type (= null by default, so that you can introduce any data) of data user introduces, by default would be string
+    // //Bind values, to prepared statement using named parameters
+    // // Type (= null by default, so that you can introduce any data) of data user introduces, by default would be string
     public function bind($param, $value, $type = null){
         if(is_null($type)){
             switch(true){
@@ -70,10 +70,10 @@ class Database {
         return $this->stmt->execute();
     }
 
-     // But if we are quering for a set of data then it is likely that we want the results returned so that we can work with the query data in php..
-     # These 2 methos will be called insted of the execute method bc they call the execute method themselves and the both return data as php object
+    //  // But if we are quering for a set of data then it is likely that we want the results returned so that we can work with the query data in php..
+    //  # These 2 methos will be called insted of the execute method bc they call the execute method themselves and the both return data as php object
 
-     //Return multiple objects. An array objs that should be used for fecthing multiples rows
+    //  //Return multiple objects. An array objs that should be used for fecthing multiples rows
     public function resultSet(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
