@@ -1,5 +1,11 @@
 <?php 
 session_start();
+if(isset($_SESSION['adminId'])){
+  $adminId=$_SESSION['adminId'];
+} else{
+  header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
+  die() ;
+}
 ?>
   
 <!DOCTYPE html>

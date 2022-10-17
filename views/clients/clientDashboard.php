@@ -1,5 +1,11 @@
 <?php 
 session_start();
+if(isset($_SESSION['adminId'])){
+  $adminId=$_SESSION['adminId'];
+} else{
+  header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
+  die() ;
+}
 ?>
   
 <!DOCTYPE html>
@@ -43,7 +49,7 @@ session_start();
                                 echo 'Guest';
                             } 
                         ?> </a></li>
-                       <li class="nav-item"><a href="controllers/loginController.php?end=logout.php" class="nav-link link-dark px-2">LogOut</a></li>
+                       <li class="nav-item"><a href="controllers/loginController.php?end=logout" class="nav-link link-dark px-2">LogOut</a></li>
                     </ul>
                     <?php endif; ?>
             </div>
