@@ -27,9 +27,8 @@
                     <div class="form-group">
                         <label for="origin">Origin</label>
                         <input required type="text" value="<?php echo isset($this->data['origin']) ? $this->data['origin'] : null ?>" class="form-control" id="origin" name="origin" aria-describedby="origin" placeholder="Enter origin">
-                    </div>
-
-                </div>
+                </div> 
+             </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="destination">Destination</label>
@@ -62,9 +61,10 @@
                         <input type="text" value="<?php echo isset($this->data['price']) ? $this->data['price'] : null ?>" class="form-control" id="price" name="price" aria-describedby="price" placeholder="Enter price">
                     </div>
                 </div>
+                </div>
                 
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Travel&action=getAllTravels"; ?>">Return</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Travel&action=getAllTravels"; ?>">Return</a>
         </form>
     </div>
 </body>
