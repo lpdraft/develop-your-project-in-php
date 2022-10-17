@@ -1,16 +1,13 @@
 <?php 
 session_start();
+if(isset($_SESSION['adminId'])){
+  $adminId=$_SESSION['adminId'];
+} else{
+  header('Location: ../../index.php');//Aqui lo redireccionas al lugar que quieras.
+  die() ;
+}
 ?>
-    <h1 id="index-text">Welcome Back,     
-        <?php if(isset($_SESSION['adminId'])){
-            // split white space and get the name
-            echo explode(" ", $_SESSION['adminName'])[0];
-        }else{
-            echo 'Guest';
-        } 
-    ?> </h1>
-
-
+  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,21 +35,28 @@ session_start();
             <div class="container d-flex flex-wrap">
                 <ul class="nav me-auto">
                   
-                    <li class="nav-item"><a href="../../index.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
+                    <li class="nav-item"><a href="main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
                     </li>
                     
                     <li class="nav-item"><a href="../../index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>
+
                     <li class="nav-item"><a href="../../index.php?controller=Travel&action=getAllTravels" class="nav-link link-dark px-2">Travels Dashboard</a></li>
                     
                 </ul>
 
                 <ul class="nav">
                   <?php if(!isset($_SESSION['adminId'])) : ?>
-                    <li class="nav-item"><a href="../../index.php" class="nav-link link-dark px-2">Login</a></li>
-                    
-                    <li class="nav-item"><a href="../../index.php" class="nav-link link-dark px-2">Register</a></li> 
+                   
                     <?php else: ?>
-                       <li class="nav-item"><a href="../../controllers/loginController.php?end=logout.php" class="nav-link link-dark px-2">LogOut</a></li>
+                        <li  class="nav-item"><a style="font-weight: 900;" class="nav-link link-dark px-2">   
+                            <?php if(isset($_SESSION['adminId'])){
+                                // split white space and get the name
+                                echo explode(" ", $_SESSION['adminName'])[0];
+                            }else{
+                                echo 'Guest';
+                            } 
+                        ?> </a></li>
+                       <li class="nav-item"><a href="../../controllers/loginController.php?end=logout" class="nav-link link-dark px-2">LogOut</a></li>
                     </ul>
                     <?php endif; ?>
             </div>

@@ -103,6 +103,7 @@
         $_SESSION['adminId'] = $admin->id_admin;
         $_SESSION['adminName'] = $admin->adminName;
         $_SESSION['adminEmail'] = $admin->adminEmail;
+
         redirect("../../develop-your-project-in-php/views/main/main.php");
     }
 
@@ -110,6 +111,7 @@
         unset($_SESSION['adminId']);
         unset($_SESSION['adminName']);
         unset($_SESSION['adminEmail']);
+
         session_destroy();
 
         redirect("../index.php");

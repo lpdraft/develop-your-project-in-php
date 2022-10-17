@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +19,35 @@
 </head>
 
 <body>
+          <nav class="py-2 bg-light border-bottom">
+            <div class="container d-flex flex-wrap">
+                <ul class="nav me-auto">
+                  
+                    <li class="nav-item"><a href="../../../develop-your-project-in-php/views/main/main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
+                    </li>
+                    
+                    <li class="nav-item"><a href="index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>
+                    <li class="nav-item"><a href="index.php?controller=Travel&action=getAllTravels" class="nav-link link-dark px-2">Travels Dashboard</a></li>
+                    
+                </ul>
 
+                <ul class="nav">
+                  <?php if(!isset($_SESSION['adminId'])) : ?>
+                   
+                    <?php else: ?>
+                        <li  class="nav-item"><a style="font-weight: 900;" class="nav-link link-dark px-2">   
+                            <?php if(isset($_SESSION['adminId'])){
+                                // split white space and get the name
+                                echo explode(" ", $_SESSION['adminName'])[0];
+                            }else{
+                                echo 'Guest';
+                            } 
+                        ?> </a></li>
+                       <li class="nav-item"><a href="controllers/loginController.php?end=logout.php" class="nav-link link-dark px-2">LogOut</a></li>
+                    </ul>
+                    <?php endif; ?>
+            </div>
+</nav>
 
     <div style="padding: 80px;">
     <h3 style="vertical-align: inherit; padding: 20px;">Clients</h3>
@@ -55,7 +87,6 @@
         </tbody>
     </table>
     <a id="home" class="btn btn-primary" href="?controller=Client&action=createClient">Create</a>
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
 </body>
 
 </html>
