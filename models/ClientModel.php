@@ -34,16 +34,16 @@ class ClientModel extends Model
 
     function create($client)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO clients (id_client, `name`, surname, email, city, phone_number)
+        $query = $this->db->connect()->prepare("INSERT INTO clients (name, surname, email, city, phone_number)
         VALUES
-        (?, ?, ?, ?, ?, ?);");
+        (?, ?, ?, ?, ?);");
 
-        $query->bindParam(1, $client["id_client"]);
-        $query->bindParam(2, $client["name"]);
-        $query->bindParam(3, $client["surname"]);
-        $query->bindParam(4, $client["email"]);
-        $query->bindParam(5, $client["city"]);     
-        $query->bindParam(6, $client["phone_number"]);
+        // $query->bindParam(1, $client["id_client"]);
+        $query->bindParam(1, $client["name"]);
+        $query->bindParam(2, $client["surname"]);
+        $query->bindParam(3, $client["email"]);
+        $query->bindParam(4, $client["city"]);     
+        $query->bindParam(5, $client["phone_number"]);
 
         try {
             $query->execute();

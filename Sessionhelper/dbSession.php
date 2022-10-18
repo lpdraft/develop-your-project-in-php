@@ -15,7 +15,7 @@ class Database {
 
     public function __construct(){
         // Set DSN-> Data Source Name
-        $dsn = 'mysql:host=localhost:3307;dbname=traveldb';
+        $dsn = 'mysql:host=localhost;dbname=traveldb';
 
         // Possible no connection Error..
         $options = array(
