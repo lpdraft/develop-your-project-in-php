@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+
 #slogan {
   border: 1px solid;
   background: url("https://images.pexels.com/photos/4340670/pexels-photo-4340670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
@@ -37,18 +39,23 @@ p {
   margin-top: 90px;
 }
 
-.chorro {
+.main_img1 {
   background: url("https://images.pexels.com/photos/3889843/pexels-photo-3889843.jpeg?auto=compress&cs=tinysrgb&w=800");
   object-fit: cover;
   height: 700px;
   width: 700px;
+  border-radius: 5px;
+
+  background-position: center top;
 }
 
-.chorro2 {
+.main_img2 {
   background: url("https://images.pexels.com/photos/2178175/pexels-photo-2178175.jpeg?auto=compress&cs=tinysrgb&w=800");
   object-fit: cover;
   height: 700px;
   width: 700px;
+  border-radius: 5px;
+  background-position: center -21rem;
 }
 
 .prueba {
@@ -56,4 +63,23 @@ p {
 }
 .lead {
   margin-top: 150px;
+}
+.h1edits {
+  text-align: center;
+  margin-top: 15%;
+}
+#clientBody,
+#travelBody {
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.footer-clientDash,
+.footer-travelDash,
+.footer-travelDashForm {
+  position: absolute;
+  bottom: 0;
+}
+.active_menu {
+  font-weight: bold;
 }
