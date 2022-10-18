@@ -31,19 +31,22 @@ We have created a PHP project with user login and CRUD operations implementing M
 #### 4. URL’s must be controlled by parameters passed by GET method
 
 ## Visual Sample
-#### Login Page
+### Login Page
 ![image](https://user-images.githubusercontent.com/90386446/196463942-857c9768-5507-4cf4-975f-81a3f1d16d83.png)
 
-#### Home Page
+### Home Page
 ![image](https://user-images.githubusercontent.com/90386446/196464610-72b92d3c-46d2-4f01-b946-cf1547e736b4.png)
 
-#### Clients Dashboard
+### Clients Dashboard
 ![image](https://user-images.githubusercontent.com/90386446/196465101-7e19285b-e5bb-4d50-bd7c-59870e4ca30d.png)
 
-#### Travels Dashboard
+## Client Track
+![image](https://user-images.githubusercontent.com/90386446/196466236-5ccb32fc-eb5a-4055-a29c-9b188884f06b.png)
+
+### Travels Dashboard
 ![image](https://user-images.githubusercontent.com/90386446/196465327-9ca25e7b-d63d-44a0-b065-16cced218ff2.png)
 
-#### Travel Track
+## Travel Track
 ![image](https://user-images.githubusercontent.com/90386446/196465601-214545c8-5346-4189-8d71-28148c182fa8.png)
 
 
