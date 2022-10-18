@@ -16,8 +16,7 @@ if(isset($_SESSION['adminId'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="/assets/js/app.js" defer></script>
-    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../../develop-your-project-in-php/assets/css/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/9cf497312c.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -48,7 +47,7 @@ if(isset($_SESSION['adminId'])){
                                 echo 'Guest';
                             } 
                         ?> </a></li>
-                       <li class="nav-item"><a href="controllers/loginController.php?end=logout" class="nav-link link-dark px-2">LogOut</a></li>
+                       <li class="nav-item"><a href="controllers/loginController.php?end=logout" class="nav-link link-dark px-2"><i class="fas fa-sign-out-alt" style="color: red;"></i></a></li>
                     </ul>
                     <?php endif; ?>
             </div>
@@ -80,8 +79,8 @@ if(isset($_SESSION['adminId'])){
                 echo "<td class='tg-0lax'>" . $travel["price"] . "</td>";
                
                 echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=Travel&action=getTravel&id_dest=" . $travel["id_dest"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=Travel&action=deleteTravel&id_dest=" . $travel["id_dest"] . "'>Delete</a>
+                <a class='btn btn-secondary' href='?controller=Travel&action=getTravel&id_dest=" . $travel["id_dest"] . "'><i class='fas fa-edit'></i></a>
+                <a class='btn btn-danger' href='?controller=Travel&action=deleteTravel&id_dest=" . $travel["id_dest"] . "'><i class='fas fa-trash-alt'></i></a>
                 </td>";
                 echo "</tr>";
             }
@@ -90,6 +89,23 @@ if(isset($_SESSION['adminId'])){
     </table>
     <a id="home" class="btn btn-primary" href="?controller=Travel&action=createTravel">Create</a>
 </body>
+
+<div class="container footer-travelDash">
+   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+     <div class="col-md-4 d-flex align-items-center">
+       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+       </a>
+       <span class="text-muted">&copy; 2022 Lovelace Squad</span>
+     </div>
+
+     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+       <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/"><img src="../../develop-your-project-in-php/assets/images/facebook.png" alt="facebook logo" width="24" height="24"></a></li>
+       <li class="ms-3"><a class="text-muted" href="https://github.com/lpdraft/develop-your-project-in-php"><img src="../../../develop-your-project-in-php/assets/images/github-logo.png" alt="github logo" width="24" height="24"></a></li>
+       <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/"><img src="../../develop-your-project-in-php/assets/images/instagram.png" alt="instagram logo" width="24" height="24"></a></li> 
+     </ul>
+     </footer>
+   </div>
 
 </html>
 

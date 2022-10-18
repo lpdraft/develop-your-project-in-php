@@ -57,3 +57,11 @@ p {
 .lead {
   margin-top: 150px;
 }
+#clientBody {
+  height: 100vh;
+}
+.footer-clientDash,
+.footer-travelDash {
+  position: absolute;
+  bottom: 0;
+}
