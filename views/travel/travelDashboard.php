@@ -28,7 +28,7 @@ if(isset($_SESSION['adminId'])){
             <div class="container d-flex flex-wrap">
                 <ul class="nav me-auto">
                   
-                    <li class="nav-item"><a href="../../../develop-your-project-in-php/views/main/main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
+                    <li class="nav-item"><a href="./views/main/main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
                     </li>
                     
                     <li class="nav-item"><a href="index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>

@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../develop-your-project-in-php/assets/css/loginCss.css">
+  <link rel="stylesheet" href="./assets/css/loginCss.css">
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -39,15 +39,15 @@
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="../../../develop-your-project-in-php/assets/images/chorro.jpg" alt="login" class="login-card-img">   
+            <img src="./assets/images/chorro.jpg" alt="login" class="login-card-img">   
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="../../../develop-your-project-in-php/assets/images/logo.png" alt="logo" class="logo">
+                <img src="./assets/images/logo.png" alt="logo" class="logo">
               </div>
               <p class="login-card-description">Sign into your account</p>
-              <form method="POST" action="../develop-your-project-in-php/controllers/loginController.php">
+              <form method="POST" action="./controllers/loginController.php">
                 <?php errorMsg('login') ?>
                 <input type="hidden" name="type" value="login">
                   <div class="form-group">
@@ -75,7 +75,7 @@
 
 			<div class="modal-body">  
 				<?php errorMsg('register') ?>
-					<form id="form_register" class="row g-3" method="POST" action="../develop-your-project-in-php/controllers/loginController.php" id="register">
+					<form id="form_register" class="row g-3" method="POST" action="./controllers/loginController.php" id="register">
 						<!-- Hidden input for Post Switch method -->
 						<input type="hidden" name="type" value="register">
 
