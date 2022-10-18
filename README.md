@@ -29,7 +29,23 @@ We have created a PHP project with user login and CRUD operations implementing M
 -  Demonstrate that the pattern is implemented correctly and are capable of displaying the data obtained from the source in a view.
 
 #### 4. URL’s must be controlled by parameters passed by GET method
+
+## Visual Sample
+#### Login Page
 ![image](https://user-images.githubusercontent.com/90386446/196463942-857c9768-5507-4cf4-975f-81a3f1d16d83.png)
+
+#### Home Page
+![image](https://user-images.githubusercontent.com/90386446/196464610-72b92d3c-46d2-4f01-b946-cf1547e736b4.png)
+
+#### Clients Dashboard
+![image](https://user-images.githubusercontent.com/90386446/196465101-7e19285b-e5bb-4d50-bd7c-59870e4ca30d.png)
+
+#### Travels Dashboard
+![image](https://user-images.githubusercontent.com/90386446/196465327-9ca25e7b-d63d-44a0-b065-16cced218ff2.png)
+
+#### Travel Track
+![image](https://user-images.githubusercontent.com/90386446/196465601-214545c8-5346-4189-8d71-28148c182fa8.png)
+
 
 ## Authors
 - [@lidiettes](https://github.com/lidiettes)
