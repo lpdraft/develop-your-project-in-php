@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 17-10-2022 a las 19:23:19
+-- Tiempo de generación: 18-10-2022 a las 16:18:12
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -45,7 +45,8 @@ CREATE TABLE `admins` (
 INSERT INTO `admins` (`id_admin`, `adminName`, `adminUname`, `adminEmail`, `adminCity`, `adminPhone`, `adminPwd`, `pwdRepeat`) VALUES
 (4, 'lokes', 'lokk', 'lo@lo.com', 'Ferrol', 334254314, '$2y$10$qWHNwyrSPtk5rB6EjHjw3.Ta1H999J0JgyE2WYacNrtZa/30dOB36', '1234bb'),
 (5, 'paus', 'pa', 'pa@pa.com', 'vigo', 56455766, '$2y$10$mO/lqynSf.usZpru/M/T2eXLYK4KwZgt3YURlcDxkBNO/./7IEPs2', '1234ff'),
-(6, 'thalita', 'tha', 'tha@tha.com', 'Pelotas', 442256666, '$2y$10$3bIT52AjUIZZM8kAz3uBBeLwOZR/hKFhKQPmZoweCjF2VUO8Mm1RS', '123tt');
+(6, 'thalita', 'tha', 'tha@tha.com', 'Pelotas', 442256666, '$2y$10$3bIT52AjUIZZM8kAz3uBBeLwOZR/hKFhKQPmZoweCjF2VUO8Mm1RS', '123tt'),
+(7, 'Lokesh Pereiro', 'lokesh', 'lokesh@lok.com', 'Ferrol', 2147483647, '$2y$10$XhlpSmvTGSd3AZV8qXi9LO8Stvkb14prICZyuDphadzTarZq9pQKy', '123ll');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,10 @@ INSERT INTO `clients` (`id_client`, `name`, `surname`, `email`, `city`, `phone_n
 (9, 'Jack', 'paus', 'ff@ff.vom', 'ibiza', 55432),
 (10, 'Maria', 'Perez', 'ma@ma.com', 'new york', 556633),
 (12, 'Maria Galletas', 'Perez', 'ma@ma.com', 'new york', 556633),
-(15, 'Jack', 'Sparrow', 'jaaccc@jaac.com', 'Namibia', 556633);
+(15, 'Jack', 'Sparrow', 'jaaccc@jaac.com', 'Namibia', 556633),
+(16, 'Pau', 'Tomas', 'pauss@pauss.com', 'Mallorca', 556633),
+(17, 'Paula', 'Mar', 'pau@pau.com', 'Menorca', 556633),
+(18, 'Paula', 'Zumos', 'pau@pau.com', 'Menorca', 556633);
 
 -- --------------------------------------------------------
 
@@ -82,8 +86,8 @@ INSERT INTO `clients` (`id_client`, `name`, `surname`, `email`, `city`, `phone_n
 CREATE TABLE `travel` (
   `Origin` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
   `Destination` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `entrance` date NOT NULL,
   `departure` date NOT NULL,
+  `arrival` date NOT NULL,
   `price` char(20) COLLATE utf8mb4_spanish_ci NOT NULL,
   `id_dest` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -92,13 +96,13 @@ CREATE TABLE `travel` (
 -- Volcado de datos para la tabla `travel`
 --
 
-INSERT INTO `travel` (`Origin`, `Destination`, `entrance`, `departure`, `price`, `id_dest`) VALUES
-('barcelona', 'egipto', '2022-10-15', '2022-10-22', '989', 1),
+INSERT INTO `travel` (`Origin`, `Destination`, `departure`, `arrival`, `price`, `id_dest`) VALUES
 ('madrid', 'londres', '2022-10-17', '2022-11-23', '250', 2),
 ('Malaga', 'Berlin', '2022-10-12', '2022-10-22', '345', 3),
 ('barcelona', 'New York', '2022-10-12', '2022-10-11', '999', 4),
 ('Sevilla', 'Beijing', '2022-10-12', '2022-10-21', '999', 5),
-('Malaga', 'San Francisco', '2022-10-10', '2022-10-15', '989', 6);
+('Malaga', 'San Francisco', '2022-10-10', '2022-10-15', '989€', 6),
+('Sevilla', 'BCN', '2022-10-19', '2022-10-23', '50€', 10);
 
 --
 -- Índices para tablas volcadas
@@ -130,19 +134,19 @@ ALTER TABLE `travel`
 -- AUTO_INCREMENT de la tabla `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `travel`
 --
 ALTER TABLE `travel`
-  MODIFY `id_dest` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_dest` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
