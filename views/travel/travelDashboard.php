@@ -24,28 +24,15 @@ if(isset($_SESSION['adminId'])){
 
 <body id="travelBody">
     <nav class="py-2 bg-light border-bottom">
-<<<<<<< HEAD
-            <div class="container d-flex flex-wrap">
-                <ul class="nav me-auto">
-                  
-                    <li class="nav-item"><a href="./views/main/main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-                    </li>
-                    
-                    <li class="nav-item"><a href="index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>
-                    <li class="nav-item"><a href="index.php?controller=Travel&action=getAllTravels" class="nav-link link-dark px-2">Travels Dashboard</a></li>
-                    
-                </ul>
-=======
             <div class="container d-flex flex-wrap justify-content-between">
     
               <ul class="nav nav-pills flex-column flex-sm-row">
-                <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark" href="../../../develop-your-project-in-php/views/main/main.php">Home</a></li>
+                <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark" href="../views/main/main.php">Home</a></li>
                 <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark " href="index.php?controller=Client&action=getAllClients">Clients Dashboard</a></li>
                 <li class="nav-item"><a class="active bg-secondary flex-sm-fill text-sm-center nav-link link-dark" href="index.php?controller=Travel&action=getAllTravels">Travels Dashboard</a></li>
                 
               </ul>
 
->>>>>>> footerCSS
 
                 <ul class="nav">
                   <?php if(!isset($_SESSION['adminId'])) : ?>
