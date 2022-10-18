@@ -1,5 +1,5 @@
 <?php
-define('HOST', 'localhost');
+define('HOST', 'localhost:3307');
 define('DB', 'traveldb');
 define('USER', 'root');
 define('PASSWORD', '');

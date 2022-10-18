@@ -45,7 +45,7 @@
 						<label>Granted Email</label>
 					</div>
 					<div class="passwd">
-						<input type="password" name="passwoord">
+						<input type="password" name="password">
 						<label>Your Password</label>
 					</div>
 					<div class="submit">

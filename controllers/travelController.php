@@ -52,7 +52,11 @@ class TravelController
                 header("Location: index.php?controller=Travel&action=getAllTravels");
             } else {
                 $this->action = $request["action"];
+<<<<<<< HEAD
                 $this->error = "The data entered is incorrect, check that there is no other hobbie with that name.";
+=======
+                $this->error = "The data entered is incorrect, check that there is no other travel with that name.";
+>>>>>>> main
                 $this->view->render("travel/travel");
             }
         } else {
