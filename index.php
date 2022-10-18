@@ -11,12 +11,6 @@ require_once "core/Router.php";
 
 
 $router = new Router();
-<<<<<<< HEAD
-
-
-
-=======
 ?>
->>>>>>> main
 
 
