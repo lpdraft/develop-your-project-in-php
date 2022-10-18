@@ -56,14 +56,15 @@
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="adminPwd" class="form-control" placeholder="***********">
+                    <input type="password" name="adminPwd" class="form-control" placeholder="*********">
                   </div>
                   <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
-                </form>
- 
-               <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+				  <button id="registerBtn" type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
 	                    Want to Register?
 	            </button>
+                </form>
+ 
+               
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
