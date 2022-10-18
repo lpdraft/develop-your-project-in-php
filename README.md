@@ -30,3 +30,9 @@ We have created a PHP project with user login and CRUD operations implementing M
 
 #### 4. URL’s must be controlled by parameters passed by GET method
 
+## Authors
+[@octokatherine](https://www.github.com/octokatherine)
+- [@lidiettes](https://github.com/lidiettes)
+- [@Pau-to-10](https://github.com/Pau-to-10)
+- [@ThalitaRoque](https://github.com/ThalitaRoque)
+- [@lpdraft](https://github.com/lpdraft)
