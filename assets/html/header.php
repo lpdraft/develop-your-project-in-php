@@ -8,23 +8,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>PHP Login System</title>
-    <link rel="stylesheet" href="../../assets/css/style.css" type="text/css">
-</head>
-<body>
-    <nav>
-        <ul>
-            <a href="index.php"><li>Home</li></a>
-            <?php if(!isset($_SESSION['usersId'])) : ?>
-                <a href="signup.php"><li>Sign Up</li></a>
-                <a href="login.php"><li>Login</li></a>
-            <?php else: ?>
-                <a href="./controllers/Users.php?q=logout"><li>Logout</li></a>
-            <?php endif; ?>
-        </ul>
-    </nav>
-=======
     <title>Document</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS v5.2.1 -->
@@ -56,4 +39,3 @@
                 </ul>
             </div>
 </nav>
->>>>>>> main

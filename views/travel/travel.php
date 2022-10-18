@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
 <?php
 session_start();
 ?>
 
->>>>>>> main
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,13 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<<<<<<< HEAD
-</head>
-
-<body>
-    <div class="container">
-        <h1>Travel's page!</h1>
-=======
     <link href="../../../develop-your-project-in-php/assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -65,7 +55,6 @@ session_start();
         }else{
             echo ' Where do you want to travel? ';
         } ?> <?php echo isset($this->data['destination']) ? $this->data['destination'] : null ?></h1>
->>>>>>> main
         </br>
 
         <?php
@@ -75,25 +64,12 @@ session_start();
             echo "<p>$error</p>";
         }
         ?>
-<<<<<<< HEAD
-=======
         
->>>>>>> main
         <form class="mb-5 needs-validation" action="index.php?controller=Travel&action=<?php echo isset($this->data['id_dest']) ? "updateTravel" : "createTravel" ?>" method="post">
             <input type="hidden" name="id_dest" value="<?php echo isset($this->data['id_dest']) ? $this->data['id_dest'] : null ?>">
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-<<<<<<< HEAD
-                        <label for="origin">Origin</label>
-                        <input required type="text" value="<?php echo isset($this->data['origin']) ? $this->data['origin'] : null ?>" class="form-control" id="origin" name="origin" aria-describedby="origin" placeholder="Enter origin">
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="destiantion">Destiantion</label>
-=======
                         <label for="origin">Origin <i class="fa-solid fa-plane-departure"></i></label>
                         <input required type="text" value="<?php echo isset($this->data['origin']) ? $this->data['origin'] : null ?>" class="form-control" id="origin" name="origin" aria-describedby="origin" placeholder="Enter origin">
                 </div> 
@@ -101,7 +77,6 @@ session_start();
                 <div class="col">
                     <div class="form-group">
                         <label for="destination">Destination <i class="fa-solid fa-plane-arrival"></i></label>
->>>>>>> main
                         <input required type="text" value="<?php echo isset($this->data['destination']) ? $this->data['destination'] : null ?>" class="form-control" id="destination" name="destination" aria-describedby="destination" placeholder="Enter destination">
                     </div>
                 </div>
@@ -110,25 +85,15 @@ session_start();
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-<<<<<<< HEAD
-                        <label for="entrance">Entrance</label>
-                        <input required type="date" value="<?php echo isset($this->data['entrance']) ? $this->data['entrance'] : null ?>" class="form-control" id="entrance" name="entrance" aria-describedby="entrance" placeholder="Enter entrance">
-=======
                         <label for="departure">Departure</label>
                         <input required type="date" value="<?php echo isset($this->data['departure']) ? $this->data['departure'] : null ?>" class="form-control" id="departure" name="departure" aria-describedby="departure" placeholder="Enter departure">
->>>>>>> main
                         
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-<<<<<<< HEAD
-                        <label for="departure">Departure</label>
-                        <input required type="date" value="<?php echo isset($this->data['departure']) ? $this->data['departure'] : null ?>" class="form-control" id="departure" name="departure" aria-describedby="departure" placeholder="Enter departure">
-=======
                         <label for="arrival">Arrival</label>
                         <input required type="date" value="<?php echo isset($this->data['arrival']) ? $this->data['arrival'] : null ?>" class="form-control" id="arrival" name="arrival" aria-describedby="arrival" placeholder="Enter arrival">
->>>>>>> main
                         
                     </div>
                 </div>                
@@ -141,22 +106,14 @@ session_start();
                         <input type="text" value="<?php echo isset($this->data['price']) ? $this->data['price'] : null ?>" class="form-control" id="price" name="price" aria-describedby="price" placeholder="Enter price">
                     </div>
                 </div>
-<<<<<<< HEAD
-                
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Travel&action=getAllTravels"; ?>">Return</a>
-=======
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Travel&action=getAllTravels"; ?>">Return</a>
->>>>>>> main
         </form>
     </div>
 </body>
 
-<<<<<<< HEAD
-=======
 <div class="container footer-travelDash">
    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
      <div class="col-md-4 d-flex align-items-center">
@@ -174,5 +131,4 @@ session_start();
      </footer>
    </div>
 
->>>>>>> main
 </html>

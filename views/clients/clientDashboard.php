@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php 
 session_start();
 if(isset($_SESSION['adminId'])){
@@ -10,7 +8,6 @@ if(isset($_SESSION['adminId'])){
 }
 ?>
   
->>>>>>> main
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,27 +16,6 @@ if(isset($_SESSION['adminId'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<<<<<<< HEAD
-</head>
-
-<body>
-    <h1>Client Dashboard page!</h1>
-    <style type="text/css">
-
-    </style>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="tg-0pky">ID</th>
-                <th class="tg-0pky">Name</th>
-                <th class="tg-0lax">Surname</th>
-                <th class="tg-0lax">Username</th>
-                <th class="tg-0lax">Email</th>
-                <th class="tg-0lax">City</th>
-                <th class="tg-0lax">Phone Number</th>
-                <th class="tg-0lax">Actions</th>
-            </tr>
-=======
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="../../../develop-your-project-in-php/assets/css/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/9cf497312c.js" crossorigin="anonymous"></script>
@@ -95,34 +71,21 @@ if(isset($_SESSION['adminId'])){
 
             </tr>
 
->>>>>>> main
         </thead>
         <tbody>
             <?php
             foreach ($this->data as $index => $client) {
                 echo "<tr>";
-<<<<<<< HEAD
-                echo "<td class='tg-0lax'>" . $client["id_admin"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["name"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["surname"] . "</td>";
-                echo "<td class='tg-0lax'>" . $client["username"] . "</td>";
-=======
                 echo "<td class='tg-0lax'>" . $client["id_client"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["name"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["surname"] . "</td>";
->>>>>>> main
                 echo "<td class='tg-0lax'>" . $client["email"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["city"] . "</td>";
                 echo "<td class='tg-0lax'>" . $client["phone_number"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
-<<<<<<< HEAD
-                <a class='btn btn-secondary' href='?controller=Client&action=getClient&id_admin=" . $client["id_admin"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=Client&action=deleteClient&id_admin=" . $client["id_admin"] . "'>Delete</a>
-=======
                 <a class='btn btn-secondary' href='?controller=Client&action=getClient&id_client=" . $client["id_client"] . "'><i class='fas fa-edit'></i></a>
 
                 <a class='btn btn-danger' href='?controller=Client&action=deleteClient&id_client=" . $client["id_client"] . "'><i class='fas fa-trash-alt'></i></a>
->>>>>>> main
                 </td>";
                 echo "</tr>";
             }
@@ -130,10 +93,6 @@ if(isset($_SESSION['adminId'])){
         </tbody>
     </table>
     <a id="home" class="btn btn-primary" href="?controller=Client&action=createClient">Create</a>
-<<<<<<< HEAD
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
-</body>
-=======
 </body>
 <div class="container footer-clientDash">
    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -152,6 +111,5 @@ if(isset($_SESSION['adminId'])){
      </footer>
    </div>
 
->>>>>>> main
 
 </html>

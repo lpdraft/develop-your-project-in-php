@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php 
 session_start();
 if(isset($_SESSION['adminId'])){
@@ -10,7 +8,6 @@ if(isset($_SESSION['adminId'])){
 }
 ?>
   
->>>>>>> main
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,24 +16,6 @@ if(isset($_SESSION['adminId'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<<<<<<< HEAD
-</head>
-
-<body>
-    <h1>Travel Dashboard page!</h1>
-    <style type="text/css">
-
-    </style>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="tg-0pky">ID</th>
-                <th class="tg-0pky">Origin</th>
-                <th class="tg-0lax">Destination</th>
-                <th class="tg-0lax">Entrance</th>
-                <th class="tg-0lax">Departure</th>
-                <th class="tg-0lax">Price</th>                
-=======
     <link href="../../../develop-your-project-in-php/assets/css/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/9cf497312c.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -85,24 +64,12 @@ if(isset($_SESSION['adminId'])){
               <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Price</font></font></th>
               <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Actions</font></font></th>
 
->>>>>>> main
             </tr>
         </thead>
         <tbody>
             <?php
             foreach ($this->data as $index => $travel) {
                 echo "<tr>";
-<<<<<<< HEAD
-                echo "<td class='tg-0lax'>" . $travel["id_dest"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["origin"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["destination"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["entrance"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["departure"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["price"] . "</td>";
-                echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=Travel&action=getTravel&id_dest=" . $travel["id_dest"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=Travel&action=deleteTravel&id_dest=" . $travel["id_dest"] . "'>Delete</a>
-=======
                 
                 echo "<td class='tg-0lax'>" . $travel["origin"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["destination"] . "</td>";
@@ -113,7 +80,6 @@ if(isset($_SESSION['adminId'])){
                 echo "<td colspan='2' class='tg-0lax'>
                 <a class='btn btn-secondary' href='?controller=Travel&action=getTravel&id_dest=" . $travel["id_dest"] . "'><i class='fas fa-edit'></i></a>
                 <a class='btn btn-danger' href='?controller=Travel&action=deleteTravel&id_dest=" . $travel["id_dest"] . "'><i class='fas fa-trash-alt'></i></a>
->>>>>>> main
                 </td>";
                 echo "</tr>";
             }
@@ -121,12 +87,6 @@ if(isset($_SESSION['adminId'])){
         </tbody>
     </table>
     <a id="home" class="btn btn-primary" href="?controller=Travel&action=createTravel">Create</a>
-<<<<<<< HEAD
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
-</body>
-
-</html>
-=======
 </body>
 
 <div class="container footer-travelDash">
@@ -149,4 +109,3 @@ if(isset($_SESSION['adminId'])){
 </html>
 
 
->>>>>>> main
