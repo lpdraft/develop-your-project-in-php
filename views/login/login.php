@@ -47,7 +47,7 @@
                 <img src="../../../develop-your-project-in-php/assets/images/logo.png" alt="logo" class="logo">
               </div>
               <p class="login-card-description">Sign into your account</p>
-              <form method="POST" action="../develop-your-project-in-php/controllers/loginController.php">
+              <form method="POST" action="../../../develop-your-project-in-php/controllers/loginController.php">
                 <?php errorMsg('login') ?>
                 <input type="hidden" name="type" value="login">
                   <div class="form-group">
