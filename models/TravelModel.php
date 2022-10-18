@@ -4,7 +4,7 @@ class TravelModel extends Model
 {
     function get()
     {
-        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
+        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, departure, arrival, price
         FROM travel;");
 
         try {
@@ -18,7 +18,7 @@ class TravelModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, entrance, departure, price
+        $query = $this->db->connect()->prepare("SELECT id_dest, origin, destination, departure, arrival, price
         FROM travel
         WHERE id_dest = $id;");
 
@@ -33,14 +33,14 @@ class TravelModel extends Model
 
     function create($travel)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO travel (origin, destination, entrance, departure, price)
+        $query = $this->db->connect()->prepare("INSERT INTO travel (origin, destination, departure, arrival, price)
         VALUES
         (?, ?, ?, ?, ?);");
 
         $query->bindParam(1, $travel["origin"]);
         $query->bindParam(2, $travel["destination"]);
-        $query->bindParam(3, $travel["entrance"]);
-        $query->bindParam(4, $travel["departure"]);
+        $query->bindParam(3, $travel["departure"]);
+        $query->bindParam(4, $travel["arrival"]);
         $query->bindParam(5, $travel["price"]);
         try {
             $query->execute();
@@ -54,13 +54,13 @@ class TravelModel extends Model
     {
         // echo "update model";
         $query = $this->db->connect()->prepare("UPDATE travel
-        SET origin = ?, destination = ?, entrance = ?, departure = ?, price = ?
+        SET origin = ?, destination = ?, departure = ?, arrival = ?, price = ?
         WHERE id_dest = ?;");
 
         $query->bindParam(1, $travel["origin"]);
         $query->bindParam(2, $travel["destination"]);
-        $query->bindParam(3, $travel["entrance"]);
-        $query->bindParam(4, $travel["departure"]);
+        $query->bindParam(3, $travel["departure"]);
+        $query->bindParam(4, $travel["arrival"]);
         $query->bindParam(5, $travel["price"]);
         $query->bindParam(6, $travel["id_dest"]);
 

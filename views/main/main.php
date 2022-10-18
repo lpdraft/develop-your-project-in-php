@@ -16,7 +16,7 @@ if(isset($_SESSION['adminId'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../../assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../../develop-your-project-in-php/assets/css/style.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS v5.2.1 -->
 	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -29,27 +29,19 @@ if(isset($_SESSION['adminId'])){
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
 		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
 	  </script>
-
-    <!-- <link rel="apple-touch-icon" href="../../assets//images/facebook.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico"> -->
+    <script src="https://kit.fontawesome.com/5fe3336987.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 <nav class="py-2 bg-light border-bottom">
-            <div class="container d-flex flex-wrap">
-                <ul class="nav me-auto">
-                  
-                    <li class="nav-item"><a href="main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-                    </li>
-                    
-                    <li class="nav-item"><a href="../../index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>
-
-                    <li class="nav-item"><a href="../../index.php?controller=Travel&action=getAllTravels" class="nav-link link-dark px-2">Travels Dashboard</a></li>
-                    
-                </ul>
+            <div class="container d-flex flex-wrap justify-content-between">
+             
+                <ul class="nav nav-pills flex-column flex-sm-row">
+                <li class="nav-item"><a class="active bg-secondary flex-sm-fill text-sm-center nav-link" href="main.php">Home</a></li>
+                <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark " href="../../index.php?controller=Client&action=getAllClients">Clients Dashboard</a></li>
+                <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark" href="../../index.php?controller=Travel&action=getAllTravels">Travels Dashboard</a></li>
+                
+              </ul>
 
                 <ul class="nav">
                   <?php if(!isset($_SESSION['adminId'])) : ?>
@@ -63,7 +55,7 @@ if(isset($_SESSION['adminId'])){
                                 echo 'Guest';
                             } 
                         ?> </a></li>
-                       <li class="nav-item"><a href="../../controllers/loginController.php?end=logout" class="nav-link link-dark px-2">LogOut</a></li>
+                       <li class="nav-item"><a href="../../controllers/loginController.php?end=logout" class="nav-link link-dark px-2"><i class="fas fa-sign-out-alt" style="color: red;"></i></a></li>
                     </ul>
                     <?php endif; ?>
             </div>
@@ -88,7 +80,7 @@ if(isset($_SESSION['adminId'])){
         <h1 class="featurette-heading fw-normal lh-8">Try searching for a city, a specific hotel, or even a landmark! <span class="text-muted">See for yourself.</span></h1>
         <p class="lead">With us you can easily find your ideal hotel and compare prices from different websites. Simply enter where you want to go and your desired travel dates, and let our hotel search engine compare accommodation prices for you. To refine your search results, simply filter by price, distance (e.g. from the beach), star category, facilities and more. From budget hostels to luxury suites, we make it easy to book online. You can search from a large variety of rooms and locations across the USA, like San Francisco and Chicago to popular cities and holiday destinations abroad!.</p>
       </div>
-      <div class="col-md-5 order-md-1 chorro">
+      <div class="col-md-5 order-md-1 main_img1">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img"   focusable="false"></svg>
 
       </div>
@@ -101,7 +93,7 @@ if(isset($_SESSION['adminId'])){
         <h2 class="featurette-heading fw-normal lh-8"> Search hundreds of flight sites at once. <span class="text-muted">Checkmate.</span></h2>
         <p class="lead">The prices shown come from numerous hotels and booking websites. This means that while users decide on us which hotel best suits their needs, the booking process itself is completed through the booking sites (which are linked to our website). By clicking on the “view deal” button, you will be forwarded onto a booking site where you can complete the reservation for the hotel deal found on our agency.</p>
       </div>
-      <div class="col-md-5 order-md-1 chorro2">
+      <div class="col-md-5 order-md-1 main_img2">
       <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img"   focusable="false"></svg>
 
 

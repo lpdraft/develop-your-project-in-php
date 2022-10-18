@@ -22,18 +22,17 @@ if(isset($_SESSION['adminId'])){
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="travelBody">
     <nav class="py-2 bg-light border-bottom">
-            <div class="container d-flex flex-wrap">
-                <ul class="nav me-auto">
-                  
-                    <li class="nav-item"><a href="../../../develop-your-project-in-php/views/main/main.php" class="nav-link link-dark px-2 active" aria-current="page">Home</a>
-                    </li>
-                    
-                    <li class="nav-item"><a href="index.php?controller=Client&action=getAllClients" class="nav-link link-dark px-2">Clients Dashboard</a></li>
-                    <li class="nav-item"><a href="index.php?controller=Travel&action=getAllTravels" class="nav-link link-dark px-2">Travels Dashboard</a></li>
-                    
-                </ul>
+            <div class="container d-flex flex-wrap justify-content-between">
+    
+              <ul class="nav nav-pills flex-column flex-sm-row">
+                <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark" href="../../../develop-your-project-in-php/views/main/main.php">Home</a></li>
+                <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link link-dark " href="index.php?controller=Client&action=getAllClients">Clients Dashboard</a></li>
+                <li class="nav-item"><a class="active bg-secondary flex-sm-fill text-sm-center nav-link link-dark" href="index.php?controller=Travel&action=getAllTravels">Travels Dashboard</a></li>
+                
+              </ul>
+
 
                 <ul class="nav">
                   <?php if(!isset($_SESSION['adminId'])) : ?>
@@ -58,11 +57,11 @@ if(isset($_SESSION['adminId'])){
     <table class="table table-striped table-sm" >
         <thead>
         <tr>
-              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Origen</font></font></th>
+              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Origin</font></font></th>
               <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Destination</font></font></th>
-              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha de entrada</font></font></th>
-              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha de salida</font></font></th>
-              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">precios</font></font></th>
+              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Departure Date</font></font></th>
+              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arrival Date</font></font></th>
+              <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Price</font></font></th>
               <th scope="col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Actions</font></font></th>
 
             </tr>
@@ -74,8 +73,8 @@ if(isset($_SESSION['adminId'])){
                 
                 echo "<td class='tg-0lax'>" . $travel["origin"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["destination"] . "</td>";
-                echo "<td class='tg-0lax'>" . $travel["entrance"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["departure"] . "</td>";
+                echo "<td class='tg-0lax'>" . $travel["arrival"] . "</td>";
                 echo "<td class='tg-0lax'>" . $travel["price"] . "</td>";
                
                 echo "<td colspan='2' class='tg-0lax'>
