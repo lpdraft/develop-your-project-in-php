@@ -94,7 +94,7 @@ session_start();
                     <div class="form-group">
                         <label for="arrival">Arrival</label>
                         <input required type="date" value="<?php echo isset($this->data['arrival']) ? $this->data['arrival'] : null ?>" class="form-control" id="arrival" name="arrival" aria-describedby="arrival" placeholder="Enter arrival">
-                        
+                       
                     </div>
                 </div>                
             </div>
